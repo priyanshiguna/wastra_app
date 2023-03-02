@@ -79,12 +79,8 @@ flutter:
   fonts:
     - family: Gordita
       fonts:
-        - asset: assets/fonts/Gordita-Light.ttf
-        - asset: assets/fonts/Gordita-Thin.ttf
-        - asset: assets/fonts/Gordita-Medium.ttf
-        - asset: assets/fonts/Gordita-Regular.ttf
-        - asset: assets/fonts/Gordita-Bold.ttf
-        - asset: assets/fonts/Gordita-Black.ttf
+        - asset: assets/fonts/Gorditas-Regular.ttf
+        - asset: assets/fonts/Gorditas-Bold.ttf
 
   #
   # For details regarding fonts from package dependencies,
