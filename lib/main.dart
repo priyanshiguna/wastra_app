@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/onboarding1.dart';
+import 'package:wastra_app/onboarding_third_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoarding1(),
+      home: const OnboardingThirdScreen(),
     );
   }
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class OnBoarding1 extends StatefulWidget {
-  const OnBoarding1({Key? key}) : super(key: key);
+class OnboardingSecondScreen extends StatefulWidget {
+  const OnboardingSecondScreen({Key? key}) : super(key: key);
 
   @override
-  State<OnBoarding1> createState() => _OnBoarding1State();
+  State<OnboardingSecondScreen> createState() => _OnboardingSecondScreenState();
 }
 
-class _OnBoarding1State extends State<OnBoarding1> {
+class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +18,25 @@ class _OnBoarding1State extends State<OnBoarding1> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    "1/3",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                children: [
+                  RichText(
+                    text: const TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 36),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '2',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w400)),
+                        TextSpan(
+                            text: '/3 ',
+                            style: TextStyle(
+                                color: Colors.black26,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400)),
+                      ],
+                    ),
                   ),
-                  Text(
+                  const Text(
                     "Skip",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                   )
@@ -33,11 +46,11 @@ class _OnBoarding1State extends State<OnBoarding1> {
                 height: 40,
               ),
               Image.asset(
-                "assets/images/2.png",
+                "assets/images/3.png",
                 height: 325,
                 width: 323,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               const Text(
@@ -48,10 +61,10 @@ class _OnBoarding1State extends State<OnBoarding1> {
                 height: 20,
               ),
               const Text(
-                "A product is the item offerd for sale. A product cab be a service for an item. It can be physical or in virtual or cyber form",
+                "Payment is in transfer of money services in exchange product or Payment typicallyt made terms agreed",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.black54),
               ),
@@ -66,7 +79,7 @@ class _OnBoarding1State extends State<OnBoarding1> {
                       color: Colors.deepOrange),
                   child: const Center(
                     child: Text(
-                      "Next >",
+                      "Next >>",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 23,
