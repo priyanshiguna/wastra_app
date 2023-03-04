@@ -24,15 +24,9 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
                       style: TextStyle(color: Colors.black, fontSize: 36),
                       children: <TextSpan>[
                         TextSpan(
-                            text: '3',
+                            text: '3/3',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.w400)),
-                        TextSpan(
-                            text: '/3 ',
-                            style: TextStyle(
-                                color: Colors.black26,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
                       ],
                     ),
                   ),

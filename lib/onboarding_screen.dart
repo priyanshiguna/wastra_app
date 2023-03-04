@@ -10,6 +10,14 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Image.asset(
+          "assets/images/1.png",
+          height: 120,
+          width: 104,
+        ),
+      ),
+    );
   }
 }
