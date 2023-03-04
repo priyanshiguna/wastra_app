@@ -15,7 +15,6 @@ class _MyCartState extends State<MyCart> {
       appBar: AppBar(
         title: const Text(
           "My Cart",
-          //textDirection: TextDirection.,
         ),
         elevation: 0,
         titleTextStyle: const TextStyle(
@@ -504,6 +503,10 @@ class _MyCartState extends State<MyCart> {
                 height: 55,
                 width: 255,
                 alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xFFF67952),
+                ),
                 child: const Text(
                   "Checkout",
                   style: TextStyle(
@@ -511,10 +514,6 @@ class _MyCartState extends State<MyCart> {
                     fontWeight: FontWeight.normal,
                     color: Colors.white,
                   ),
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xFFF67952),
                 ),
               ),
             ],

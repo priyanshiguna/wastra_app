@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
-import 'package:wastra_app/order_complete_screen.dart';
+import 'package:wastra_app/search_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OrderCompleteScreen(),
-      home: const HomePageScreen(),
+      //home: const OrderCompleteScreen(),
+      home: const SearchScreen(),
     );
   }
 }
