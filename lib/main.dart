@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/search_screen.dart';
+import 'package:wastra_app/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const OnBoardingScreen(),
       //home: const OrderCompleteScreen(),
       home: const SearchScreen(),
     );
