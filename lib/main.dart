@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'cart_screen.dart';
+import 'package:wastra_app/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const CartScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
