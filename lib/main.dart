@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/order_complete_screen.dart';
+import 'package:wastra_app/profile_screen_one.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OrderCompleteScreen(),
+      home: const ProfileScreenOne(),
     );
   }
 }
