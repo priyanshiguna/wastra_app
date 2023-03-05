@@ -26,10 +26,13 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                         TextSpan(
                             text: '2',
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w400)),
+                                fontFamily: "Gorditas-Regular.ttf",
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400)),
                         TextSpan(
                             text: '/3 ',
                             style: TextStyle(
+                                fontFamily: "Gorditas-Regular.ttf",
                                 color: Colors.black26,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w400)),
@@ -38,7 +41,10 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                   ),
                   const Text(
                     "Skip",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400),
                   )
                 ],
               ),
@@ -55,7 +61,10 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
               ),
               const Text(
                 "Choose Product",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontFamily: "Gorditas-Regular.ttf",
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 20,
@@ -64,6 +73,7 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                 "Payment is in transfer of money services in exchange product or Payment typicallyt made terms agreed",
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                    fontFamily: "Gorditas-Regular.ttf",
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.black54),
@@ -81,6 +91,7 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                     child: Text(
                       "Next >>",
                       style: TextStyle(
+                          fontFamily: "Gorditas-Regular.ttf",
                           color: Colors.white,
                           fontSize: 23,
                           fontWeight: FontWeight.w400),

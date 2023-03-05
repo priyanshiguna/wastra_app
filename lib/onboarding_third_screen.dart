@@ -26,13 +26,18 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
                         TextSpan(
                             text: '3/3',
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w400)),
+                                fontFamily: "Gorditas-Regular.ttf",
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400)),
                       ],
                     ),
                   ),
                   const Text(
                     "Skip",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400),
                   )
                 ],
               ),
@@ -49,7 +54,10 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
               ),
               const Text(
                 "Choose Product",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontFamily: "Gorditas-Regular.ttf",
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 20,
@@ -58,6 +66,7 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
                 "Business or commerce an order is a started intension either spoken to engage in a commercial transaction specific products",
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                    fontFamily: "Gorditas-Regular.ttf",
                     fontSize: 17,
                     fontWeight: FontWeight.w500,
                     color: Colors.black54),
@@ -75,6 +84,7 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
                     child: Text(
                       "Get Started >>>",
                       style: TextStyle(
+                          fontFamily: "Gorditas-Regular.ttf",
                           color: Colors.white,
                           fontSize: 23,
                           fontWeight: FontWeight.w400),
