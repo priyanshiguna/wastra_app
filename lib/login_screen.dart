@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const Text(
               "Log in",
               style: TextStyle(
-                  fontFamily: "Gorditas-Bold.ttf",
+                  
                   fontSize: 26,
                   fontWeight: FontWeight.w600),
             ),
@@ -61,7 +61,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 45,
                     width: 48,
                     //color: Color(0xFFF67952),
-                    child: Image.asset("assets/images/email.png"),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset("assets/images/email.png"),
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -104,7 +112,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 45,
                     width: 48,
                     //color: Color(0xFFF67952),
-                    child: Image.asset("assets/images/lock.png"),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset("assets/images/lock.png"),
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -149,12 +165,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Log in",
                     style: TextStyle(
-                        fontFamily: "Gorditas-bold.ttf",
+                        
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
                 )),
+            Row(
+              children: [
+                const Divider(
+                  color: Colors.black,
+                  endIndent: ,
+                ),
+              ],
+            ),
+            Container(
+              width: 100,
+              color: Colors.black,
+            ),
+            Divider()
           ],
         ),
       ),

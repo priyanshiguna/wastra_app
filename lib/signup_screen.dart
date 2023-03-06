@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'common/app_button.dart';
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
@@ -29,10 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const Text(
               "Sign Up",
-              style: TextStyle(
-                  fontFamily: "Gorditas-Bold.ttf",
-                  fontSize: 26,
-                  fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
             ),
             const SizedBox(
               height: 30,
@@ -60,7 +59,17 @@ class _SignupScreenState extends State<SignupScreen> {
                   Container(
                     height: 45,
                     width: 48,
-                    child: Image.asset("assets/images/name.png"),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Image.asset(
+                        "assets/images/name.png",
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -103,7 +112,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 45,
                     width: 48,
                     //color: Color(0xFFF67952),
-                    child: Image.asset("assets/images/email.png"),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset("assets/images/email.png"),
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -146,7 +163,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 45,
                     width: 48,
                     //color: Color(0xFFF67952),
-                    child: Image.asset("assets/images/lock.png"),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset("assets/images/lock.png"),
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -175,48 +200,34 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 15,
                     width: 16,
                   ),
-                  // Container(
-                  //   height: 16,
-                  //   width: 16,
-                  //   child: Icon(
-                  //     Icons.check,
-                  //     color: Colors.white,
-                  //   ),
-                  //   decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(2),
-                  //     color: Colors.deepOrange,
-                  //   ),
-                  // ),
-                  const Text(
-                    " I accept all the Terms & condition",
-                    style: TextStyle(
-                        fontFamily: "Gorditas-Regular.ttf",
-                        color: Colors.black54,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500),
+                  RichText(
+                    text: const TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 36),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'I accept all the',
+                            style: TextStyle(
+                                fontFamily: "Gorditas-Regular.ttf",
+                                color: Colors.black45,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400)),
+                        TextSpan(
+                            text: ' Terms and condition ',
+                            style: TextStyle(
+                                fontFamily: "Gorditas-Regular.ttf",
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600)),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
-            Container(
-                height: 55,
-                width: 256,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.deepOrange),
-                child: const Center(
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                        fontFamily: "Gorditas-bold.ttf",
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )),
+            AppButton(title: "Sign Up"),
           ],
         ),
       ),
