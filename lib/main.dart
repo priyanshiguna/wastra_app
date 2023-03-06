@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/profile_screen_one.dart';
+import 'package:wastra_app/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,5 +19,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: ProfileScreenOne());
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const SignupScreen(),
+      // home: const OnBoardingScreen(),
+    );
   }
 }
