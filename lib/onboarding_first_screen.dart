@@ -26,10 +26,13 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                         TextSpan(
                             text: '1',
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w400)),
+                                fontFamily: "Gorditas-Regular.ttf",
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400)),
                         TextSpan(
                             text: '/3 ',
                             style: TextStyle(
+                                fontFamily: "Gorditas-Regular.ttf",
                                 color: Colors.black26,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w400)),
@@ -38,7 +41,10 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                   ),
                   const Text(
                     "Skip",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400),
                   )
                 ],
               ),
@@ -64,6 +70,7 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                 "A product is the item offerd for sale. A product cab be a service for an item. It can be physical or in virtual or cyber form",
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                    fontFamily: "Gorditas-Regular.ttf",
                     fontSize: 17,
                     fontWeight: FontWeight.w500,
                     color: Colors.black54),
@@ -81,6 +88,7 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                     child: Text(
                       "Next >",
                       style: TextStyle(
+                          fontFamily: "Gorditas-Regular.ttf",
                           color: Colors.white,
                           fontSize: 23,
                           fontWeight: FontWeight.w400),

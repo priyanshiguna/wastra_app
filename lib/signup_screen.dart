@@ -1,0 +1,236 @@
+import 'package:flutter/material.dart';
+
+import 'common/app_button.dart';
+
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 50,
+            ),
+            Center(
+              child: Image.asset(
+                "assets/images/login.png",
+                height: 62,
+                width: 54,
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text(
+              "Sign Up",
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 57,
+              width: 335,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: const Color(0xFFFBFBFD),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Colors.black45,
+                      blurRadius: 1,
+                      spreadRadius: 1,
+                      offset: Offset(
+                        2,
+                        2,
+                      ))
+                ],
+              ),
+              child: Row(
+                children: [
+                  const SizedBox(width: 10),
+                  Container(
+                    height: 45,
+                    width: 48,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Image.asset(
+                        "assets/images/name.png",
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    "Name",
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        color: Colors.black45,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 57,
+              width: 335,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: const Color(0xFFFBFBFD),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Colors.black45,
+                      blurRadius: 1,
+                      spreadRadius: 1,
+                      offset: Offset(
+                        2,
+                        2,
+                      ))
+                ],
+              ),
+              child: Row(
+                children: [
+                  const SizedBox(width: 10),
+                  Container(
+                    height: 45,
+                    width: 48,
+                    //color: Color(0xFFF67952),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset("assets/images/email.png"),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    "Email",
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        color: Colors.black45,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 57,
+              width: 335,
+              //color: Colors.yellow,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: const Color(0xFFFBFBFD),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.black45,
+                        blurRadius: 1,
+                        spreadRadius: 1,
+                        offset: Offset(
+                          2,
+                          2,
+                        ))
+                  ]),
+              child: Row(
+                children: [
+                  const SizedBox(width: 10),
+                  Container(
+                    height: 45,
+                    width: 48,
+                    //color: Color(0xFFF67952),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(
+                          0x1AF67952,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Image.asset("assets/images/lock.png"),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    "Password",
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        color: Colors.black45,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30, top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    "assets/images/tick.png",
+                    height: 15,
+                    width: 16,
+                  ),
+                  RichText(
+                    text: const TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 36),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'I accept all the',
+                            style: TextStyle(
+                                fontFamily: "Gorditas-Regular.ttf",
+                                color: Colors.black45,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400)),
+                        TextSpan(
+                            text: ' Terms and condition ',
+                            style: TextStyle(
+                                fontFamily: "Gorditas-Regular.ttf",
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            AppButton(title: "Sign Up"),
+          ],
+        ),
+      ),
+    );
+  }
+}
