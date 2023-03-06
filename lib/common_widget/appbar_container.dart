@@ -7,15 +7,18 @@ class AppbarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: const Icon(
+        Icons.arrow_back_ios,
+        color: Colors.black,
+      ),
       title: Text(
         text ?? "",
         style: const TextStyle(
           color: Colors.black,
+          fontFamily: "Gordita",
+          fontWeight: FontWeight.w600,
+          fontSize: 20,
         ),
-      ),
-      leading: const Icon(
-        Icons.arrow_back_ios,
-        color: Colors.black,
       ),
       centerTitle: true,
       backgroundColor: const Color(0xFFFBFBFD),

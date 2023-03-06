@@ -29,10 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const Text(
               "Log in",
-              style: TextStyle(
-                  
-                  fontSize: 26,
-                  fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
             ),
             const SizedBox(
               height: 30,
@@ -165,7 +162,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Log in",
                     style: TextStyle(
-                        
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
@@ -175,7 +171,6 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const Divider(
                   color: Colors.black,
-                  endIndent: ,
                 ),
               ],
             ),

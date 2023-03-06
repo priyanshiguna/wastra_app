@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'package:wastra_app/profile_screen_one.dart';
 import 'package:wastra_app/signup_screen.dart';
+import 'package:wastra_app/profile_new_address_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const AddNewAddressScreen(),
       // home: const OnBoardingScreen(),
       //home: const OrderCompleteScreen(),
       home: const HomePageScreen(),
