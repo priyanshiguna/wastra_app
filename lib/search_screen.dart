@@ -172,7 +172,6 @@ class _SearchScreenState extends State<SearchScreen> {
                   SizedBox(
                     height: 190,
                     width: double.infinity,
-                    // color: Colors.lightGreen,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -182,7 +181,6 @@ class _SearchScreenState extends State<SearchScreen> {
                             Container(
                               height: 133,
                               width: 142,
-                              // padding: EdgeInsets.only(top: 5),
                               decoration: const BoxDecoration(
                                 color: Color(0xFFEFEFF2),
                                 borderRadius:

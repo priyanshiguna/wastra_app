@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
 
-import 'cart_screen.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -23,7 +21,7 @@ class MyApp extends StatelessWidget {
       // home: const OnBoardingScreen(),
       //home: const OrderCompleteScreen(),
       home: const HomePageScreen(),
-      home: const CartScreen(),
+      //  home: const CartScreen(),
       // home: const OnBoardingScreen(),
     );
   }
