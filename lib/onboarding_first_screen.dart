@@ -61,10 +61,7 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
               ),
               const Text(
                 "Choose Product",
-                style: TextStyle(
-                    fontFamily: "Gorditas-Bold.ttf",
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 20,
