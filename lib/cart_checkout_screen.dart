@@ -17,7 +17,6 @@ class _MyCartState extends State<MyCart> {
       appBar: AppBar(
         title: const Text(
           "My Cart",
-          //textDirection: TextDirection.,
         ),
         elevation: 0,
         titleTextStyle: const TextStyle(
