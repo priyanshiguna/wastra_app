@@ -227,7 +227,128 @@ class _SignupScreenState extends State<SignupScreen> {
             const SizedBox(
               height: 20,
             ),
-            AppButton(title: "Sign Up"),
+            const AppButton(title: "Sign Up"),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: const [
+                Expanded(
+                  child: Divider(
+                    color: Colors.black45, //color of divider
+                    height: 1, //height spacing of divider
+                    thickness: 2, //thickness of divier line
+                    indent: 35, //spacing at the start of divider
+                    endIndent: 35, //spacing at the end of divider
+                  ),
+                ),
+                Text(
+                  "Or",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black45,
+                    fontFamily: "Gorditas-Regular.ttf",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Expanded(
+                  child: Divider(
+                    color: Colors.black45, //color of divider
+                    height: 1, //height spacing of divider
+                    thickness: 2, //thickness of divier line
+                    indent: 35, //spacing at the start of divider
+                    endIndent: 35, //spacing at the end of divider
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SizedBox(
+                  height: 70,
+                  width: 70,
+                ),
+                Container(
+                  height: 71,
+                  width: 71,
+                  //color: Colors.lightBlueAccent,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black45,
+                            blurRadius: 1,
+                            spreadRadius: 2,
+                            offset: Offset(
+                              0,
+                              0,
+                            ))
+                      ]),
+                  child: Image.asset(
+                    "assets/images/facebook.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                Container(
+                  height: 71,
+                  width: 71,
+                  //color: Colors.lightBlueAccent,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 1,
+                          spreadRadius: 2,
+                        )
+                      ]),
+                  child: Image.asset(
+                    "assets/images/google.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                const SizedBox(
+                  height: 70,
+                  width: 70,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(color: Colors.black45, fontSize: 36),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: "Already have an account?",
+                          style: TextStyle(
+                              fontFamily: "Gorditas-Regular.ttf",
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500)),
+                      TextSpan(
+                          text: "Sign Up",
+                          style: TextStyle(
+                              fontFamily: "Gorditas-Regular.ttf",
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
