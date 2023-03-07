@@ -78,21 +78,31 @@ class _PaymentDoneScreenState extends State<PaymentDoneScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
-                height: 55,
-                width: 256,
-                decoration: const BoxDecoration(
-                  color: Color(0xffFFE9E2),
-                  borderRadius: BorderRadius.all(Radius.circular(40)),
-                ),
-                child: const Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Back to Home",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xffF67952),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PaymentDoneScreen(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 55,
+                  width: 256,
+                  decoration: const BoxDecoration(
+                    color: Color(0xffFFE9E2),
+                    borderRadius: BorderRadius.all(Radius.circular(40)),
+                  ),
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Back to Home",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xffF67952),
+                      ),
                     ),
                   ),
                 ),

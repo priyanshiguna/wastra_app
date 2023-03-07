@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/profile_new_address_screen.dart';
+
+import 'cart_checkout_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AddNewAddressScreen(),
+      home: const MyCart(),
     );
   }
 }

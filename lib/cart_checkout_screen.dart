@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'checkout_screen.dart';
+
 class MyCart extends StatefulWidget {
   const MyCart({Key? key}) : super(key: key);
 
@@ -500,21 +502,26 @@ class _MyCartState extends State<MyCart> {
                 ],
               ),
               const SizedBox(height: 20.0),
-              Container(
-                height: 55,
-                width: 255,
-                alignment: Alignment.center,
-                child: const Text(
-                  "Checkout",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CheckOut(),),);
+                },
+                child: Container(
+                  height: 55,
+                  width: 255,
+                  alignment: Alignment.center,
+                  child: const Text(
+                    "Checkout",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xFFF67952),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: const Color(0xFFF67952),
+                  ),
                 ),
               ),
             ],

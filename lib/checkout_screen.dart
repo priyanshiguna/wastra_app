@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/payment_done_screen.dart';
 
 class CheckOut extends StatefulWidget {
   const CheckOut({Key? key}) : super(key: key);
@@ -27,10 +28,15 @@ class _CheckOutState extends State<CheckOut> {
         centerTitle: true,
         titleSpacing: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
-          size: 21,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 21,
+          ),
         ),
       ),
       body: Padding(
@@ -311,40 +317,50 @@ class _CheckOutState extends State<CheckOut> {
               ),
             ),
             const SizedBox(height: 40.0),
-            Container(
-              height: 55,
-              width: 255,
-              alignment: Alignment.center,
-              padding: EdgeInsets.only(left: 10, right: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 38,
-                    width: 38,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFBFBFD),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: const Color(0xFFF67952),
-                      size: 21,
-                    ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaymentDoneScreen(),
                   ),
-                  const Text(
-                    "Swipe for Payment",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
+                );
+              },
+              child: Container(
+                height: 55,
+                width: 255,
+                alignment: Alignment.center,
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 38,
+                      width: 38,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFFBFBFD),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: const Color(0xFFF67952),
+                        size: 21,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: const Color(0xFFF67952),
+                    const Text(
+                      "Swipe for Payment",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xFFF67952),
+                ),
               ),
             ),
           ],
