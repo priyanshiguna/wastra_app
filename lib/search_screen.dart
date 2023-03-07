@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'categories_screen.dart';
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
 
@@ -26,10 +28,15 @@ class _SearchScreenState extends State<SearchScreen> {
         centerTitle: true,
         titleSpacing: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
-          size: 21,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 21,
+          ),
         ),
       ),
       body: SafeArea(
@@ -186,8 +193,18 @@ class _SearchScreenState extends State<SearchScreen> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
                               ),
-                              child: Image.asset(
-                                "assets/images/Pblueshirt.png",
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CategoriesScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Image.asset(
+                                  "assets/images/Pblueshirt.png",
+                                ),
                               ),
                             ),
                             Padding(

@@ -30,7 +30,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios,
             color: Colors.black,
             size: 21,

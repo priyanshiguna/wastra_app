@@ -21,10 +21,15 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.black,
-                    size: 22,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: 22,
+                    ),
                   ),
                   Container(
                     width: 45,

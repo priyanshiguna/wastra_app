@@ -168,8 +168,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 )),
             Row(
-              children: [
-                const Divider(
+              children: const [
+                Divider(
                   color: Colors.black,
                 ),
               ],
@@ -178,7 +178,6 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 100,
               color: Colors.black,
             ),
-            Divider()
           ],
         ),
       ),

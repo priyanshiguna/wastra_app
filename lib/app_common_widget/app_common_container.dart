@@ -38,11 +38,11 @@ class AppCommonContainer extends StatelessWidget {
           ),
           Text(
             titleText!,
-            style: const TextStyle(
-              fontFamily: "Gorditas",
+            style: TextStyle(
+              fontFamily: "Gordita",
               fontSize: 12,
               fontWeight: FontWeight.w400,
-              color: Colors.grey,
+              color: color!,
             ),
           ),
         ],
