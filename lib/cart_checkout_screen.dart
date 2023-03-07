@@ -502,8 +502,13 @@ class _MyCartState extends State<MyCart> {
               ),
               const SizedBox(height: 20.0),
               GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => CheckOut(),),);
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CheckOut(),
+                    ),
+                  );
                 },
                 child: Container(
                   height: 55,
