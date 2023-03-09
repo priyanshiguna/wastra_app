@@ -44,12 +44,12 @@ class _SignupScreenState extends State<SignupScreen> {
                 color: const Color(0xFFFBFBFD),
                 boxShadow: const [
                   BoxShadow(
-                      color: Colors.black45,
-                      blurRadius: 1,
+                      color: Color(0x40000000),
+                      blurRadius: 12,
                       spreadRadius: 1,
                       offset: Offset(
-                        2,
-                        2,
+                        0,
+                        5,
                       ))
                 ],
               ),
@@ -96,12 +96,12 @@ class _SignupScreenState extends State<SignupScreen> {
                 color: const Color(0xFFFBFBFD),
                 boxShadow: const [
                   BoxShadow(
-                      color: Colors.black45,
-                      blurRadius: 1,
+                      color: Color(0x40000000),
+                      blurRadius: 12,
                       spreadRadius: 1,
                       offset: Offset(
-                        2,
-                        2,
+                        0,
+                        5,
                       ))
                 ],
               ),
@@ -148,12 +148,12 @@ class _SignupScreenState extends State<SignupScreen> {
                   color: const Color(0xFFFBFBFD),
                   boxShadow: const [
                     BoxShadow(
-                        color: Colors.black45,
-                        blurRadius: 1,
+                        color: Color(0x40000000),
+                        blurRadius: 12,
                         spreadRadius: 1,
                         offset: Offset(
-                          2,
-                          2,
+                          0,
+                          5,
                         ))
                   ]),
               child: Row(
@@ -281,12 +281,12 @@ class _SignupScreenState extends State<SignupScreen> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.black45,
-                            blurRadius: 1,
-                            spreadRadius: 2,
+                            color: Color(0x40000000),
+                            blurRadius: 12,
+                            spreadRadius: 1,
                             offset: Offset(
                               0,
-                              0,
+                              5,
                             ))
                       ]),
                   child: Image.asset(
@@ -304,10 +304,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 1,
-                          spreadRadius: 2,
-                        )
+                            color: Color(0x40000000),
+                            blurRadius: 12,
+                            spreadRadius: 1,
+                            offset: Offset(
+                              0,
+                              5,
+                            ))
                       ]),
                   child: Image.asset(
                     "assets/images/google.png",
@@ -335,14 +338,14 @@ class _SignupScreenState extends State<SignupScreen> {
                           text: "Already have an account?",
                           style: TextStyle(
                               fontFamily: "Gorditas-Regular.ttf",
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.w500)),
                       TextSpan(
-                          text: "Sign Up",
+                          text: " Sign Up",
                           style: TextStyle(
                               fontFamily: "Gorditas-Regular.ttf",
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.w500)),
                     ],
                   ),
