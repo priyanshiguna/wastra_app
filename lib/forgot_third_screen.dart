@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
+import 'bottom_bar_screen.dart';
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
 
-class Forgot_Third_Screen extends StatefulWidget {
-  const Forgot_Third_Screen({Key? key}) : super(key: key);
+class ForgotthirdScreen extends StatefulWidget {
+  const ForgotthirdScreen({Key? key}) : super(key: key);
 
   @override
-  State<Forgot_Third_Screen> createState() => forgot_third_screen();
+  State<ForgotthirdScreen> createState() => forgot_third_screen();
 }
 
-class forgot_third_screen extends State<Forgot_Third_Screen> {
+class forgot_third_screen extends State<ForgotthirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -156,8 +157,18 @@ class forgot_third_screen extends State<Forgot_Third_Screen> {
                 const SizedBox(
                   height: 100,
                 ),
-                const AppButton(
-                  title: "Continue",
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomBarScreen(),
+                      ),
+                    );
+                  },
+                  child: AppButton(
+                    title: "Continue",
+                  ),
                 ),
               ],
             ),

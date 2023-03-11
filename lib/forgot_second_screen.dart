@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
+import 'forgot_third_screen.dart';
 
 class ForgotSecondScreen extends StatefulWidget {
   const ForgotSecondScreen({Key? key}) : super(key: key);
@@ -113,8 +114,18 @@ class _ForgotSecondScreenState extends State<ForgotSecondScreen> {
                 const SizedBox(
                   height: 200,
                 ),
-                const AppButton(
-                  title: "Verify",
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotthirdScreen(),
+                      ),
+                    );
+                  },
+                  child: const AppButton(
+                    title: "Verify",
+                  ),
                 ),
               ],
             )

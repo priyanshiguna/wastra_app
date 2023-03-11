@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/signup_screen.dart';
 
 import 'common/app_button.dart';
+import 'forgot_first_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -140,14 +142,24 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                Text(
-                  "Forgot password? ",
-                  style: TextStyle(
-                      fontFamily: "Gorditas-Regular.ttf",
-                      color: Colors.black54,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500),
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotFirstScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Forgot password? ",
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        color: Colors.black54,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ],
             ),
@@ -164,7 +176,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Divider(
                     color: Colors.black45, //color of divider
                     height: 1, //height spacing of divider
-                    thickness: 2, //thickness of divider line
+                    thickness: 2, //thickness of divier line
                     indent: 35, //spacing at the start of divider
                     endIndent: 35, //spacing at the end of divider
                   ),
@@ -257,24 +269,30 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RichText(
-                  text: const TextSpan(
-                    style: TextStyle(color: Colors.black45, fontSize: 36),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: "Don't have an account?",
-                          style: TextStyle(
-                              fontFamily: "Gordita",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                      TextSpan(
-                          text: " Sign Up",
-                          style: TextStyle(
-                              fontFamily: "Gorditas-Regular.ttf",
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                    ],
+                const Text(
+                  "Don't have an account?",
+                  style: TextStyle(
+                      fontFamily: "Gordita",
+                      fontSize: 15,
+                      color: Color(0xFF230A06),
+                      fontWeight: FontWeight.w300),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignupScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    " Sign Up",
+                    style: TextStyle(
+                        fontFamily: "Gordita",
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ],

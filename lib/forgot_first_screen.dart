@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
+import 'forgot_second_screen.dart';
 
 class ForgotFirstScreen extends StatefulWidget {
   const ForgotFirstScreen({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class _ForgotFirstScreenState extends State<ForgotFirstScreen> {
                 const Text(
                   "Enter Your Email",
                   style: TextStyle(
-                      fontFamily: "Gordita-Medium.ttf",
+                      fontFamily: "Gordita",
                       fontSize: 20,
                       fontWeight: FontWeight.w500),
                 ),
@@ -86,7 +87,7 @@ class _ForgotFirstScreenState extends State<ForgotFirstScreen> {
                       const Text(
                         "Email",
                         style: TextStyle(
-                            fontFamily: "Gorditas-Regular.ttf",
+                            fontFamily: "Gordita",
                             color: Color(0xFF230A06),
                             fontSize: 15,
                             fontWeight: FontWeight.w400),
@@ -97,8 +98,18 @@ class _ForgotFirstScreenState extends State<ForgotFirstScreen> {
                 const SizedBox(
                   height: 160,
                 ),
-                const AppButton(
-                  title: "Next",
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ForgotSecondScreen(),
+                      ),
+                    );
+                  },
+                  child: AppButton(
+                    title: "Verify",
+                  ),
                 ),
               ],
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'common/app_button.dart';
+import 'login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -331,28 +332,34 @@ class _SignupScreenState extends State<SignupScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RichText(
-                  text: const TextSpan(
-                    style: TextStyle(color: Colors.black45, fontSize: 36),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: "Already have an account?",
-                          style: TextStyle(
-                              fontFamily: "Gorditas-Regular.ttf",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                      TextSpan(
-                          text: " Login",
-                          style: TextStyle(
-                              fontFamily: "Gorditas-Regular.ttf",
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                    ],
+                const Text(
+                  "Already have an account?",
+                  style: TextStyle(
+                      fontFamily: "Gordita",
+                      fontSize: 15,
+                      color: Color(0xFF230A06),
+                      fontWeight: FontWeight.w300),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    " Login",
+                    style: TextStyle(
+                        fontFamily: "Gordita",
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'hasti_common_widget/container_common.dart';
+
 class OrderCompleteScreen extends StatefulWidget {
   const OrderCompleteScreen({Key? key}) : super(key: key);
 
@@ -400,15 +402,7 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
                 ],
               ),
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  void rate(int rating) {
-    setState(() {
-      _rating = rating;
-    });
+          );
+        });
   }
 }
