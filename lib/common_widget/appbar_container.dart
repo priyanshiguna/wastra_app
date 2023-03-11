@@ -7,9 +7,14 @@ class AppbarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: const Icon(
-        Icons.arrow_back_ios,
-        color: Colors.black,
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.black,
+        ),
       ),
       title: Text(
         text ?? "",
