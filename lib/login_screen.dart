@@ -42,12 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: const Color(0xFFFBFBFD),
                 boxShadow: const [
                   BoxShadow(
-                      color: Colors.black45,
-                      blurRadius: 1,
+                      color: Color(0x40000000),
+                      blurRadius: 12,
                       spreadRadius: 1,
                       offset: Offset(
-                        2,
-                        2,
+                        0,
+                        5,
                       ))
                 ],
               ),
@@ -94,12 +94,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: const Color(0xFFFBFBFD),
                   boxShadow: const [
                     BoxShadow(
-                        color: Colors.black45,
-                        blurRadius: 1,
+                        color: Color(0x40000000),
+                        blurRadius: 12,
                         spreadRadius: 1,
                         offset: Offset(
-                          2,
-                          2,
+                          0,
+                          5,
                         ))
                   ]),
               child: Row(

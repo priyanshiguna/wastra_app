@@ -79,7 +79,7 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
                   width: 300,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Colors.deepOrange),
+                      color: Color(0xFFF67952)),
                   child: const Center(
                     child: Text(
                       "Get Started >>>",
