@@ -164,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Divider(
                     color: Colors.black45, //color of divider
                     height: 1, //height spacing of divider
-                    thickness: 2, //thickness of divier line
+                    thickness: 2, //thickness of divider line
                     indent: 35, //spacing at the start of divider
                     endIndent: 35, //spacing at the end of divider
                   ),
@@ -264,7 +264,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextSpan(
                           text: "Don't have an account?",
                           style: TextStyle(
-                              fontFamily: "Gorditas-Regular.ttf",
+                              fontFamily: "Gordita",
                               fontSize: 18,
                               fontWeight: FontWeight.w500)),
                       TextSpan(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wastra_app/notification_screen.dart';
 import 'package:wastra_app/search_screen.dart';
 
-import 'app_common_widget/app_common_container.dart';
+import 'app_common_widget/app_home_screen_common.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({Key? key}) : super(key: key);
@@ -354,7 +354,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 child: ListView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  children: [
+                  children: const [
                     AppCommonContainer(
                       image: "assets/images/Pskyshirt.png",
                     ),
@@ -362,66 +362,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     AppCommonContainer(
                       image: "assets/images/Pwhitesh.png",
                     ),
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image: AssetImage("assets/images/Pwhitesh.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                    SizedBox(width: 10),
+                    AppCommonContainer(
+                      image: "assets/images/Pblackshirt.png",
                     ),
                   ],
                 ),
@@ -453,64 +396,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 childAspectRatio: 0.9,
               ),
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFFBFBFD),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: Color(0xFFEFEFF2),
-                          spreadRadius: 5,
-                          blurRadius: 12.0,
-                          offset: Offset(0, 5))
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 140,
-                          width: double.infinity,
-                          decoration: const BoxDecoration(
-                            color: Color(0xffEFEFF2),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(15),
-                            ),
-                          ),
-                          child: const Image(
-                            image: AssetImage("assets/images/Pskyshirt.png"),
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: const [
-                            Text(
-                              "Long Sleeve\nShirts",
-                              style: TextStyle(
-                                fontFamily: "Gordita",
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                              ),
-                            ),
-                            Spacer(),
-                            Text(
-                              "\$165",
-                              style: TextStyle(
-                                fontFamily: "Gordita",
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                return const AppCommonContainer(
+                  image: "assets/images/Pskyshirt.png",
                 );
               },
             ),

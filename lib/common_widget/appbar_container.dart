@@ -21,7 +21,7 @@ class AppbarContainer extends StatelessWidget {
         style: const TextStyle(
           color: Colors.black,
           fontFamily: "Gordita",
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
       ),
