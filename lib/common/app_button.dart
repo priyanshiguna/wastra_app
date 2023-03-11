@@ -11,16 +11,16 @@ class AppButton extends StatelessWidget {
       width: 256,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: Colors.deepOrange,
+        color: Color(0xFFF67952),
       ),
       child: Center(
         child: Text(
           title,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              fontFamily: "Gordita"),
         ),
       ),
     );
