@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/profile_screen.dart';
 
 import 'favorite_screen.dart';
 import 'home_screen.dart';
@@ -18,6 +19,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     const HomePageScreen(),
     const OrderCompleteScreen(),
     const FavoriteScreen(),
+    const ProfileScreen(),
   ];
 
   @override
