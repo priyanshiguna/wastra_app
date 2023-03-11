@@ -346,7 +346,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               fontFamily: "Gorditas-Regular.ttf",
                               color: Colors.black,
                               fontSize: 18,
-                              fontWeight: FontWeight.w600)),
+                              fontWeight: FontWeight.w500)),
                     ],
                   ),
                 ),
