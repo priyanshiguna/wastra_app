@@ -3,10 +3,11 @@ import 'package:wastra_app/payment_done_screen.dart';
 
 class CheckOut extends StatefulWidget {
   const CheckOut({Key? key}) : super(key: key);
-
   @override
   State<CheckOut> createState() => _CheckOutState();
 }
+
+bool checkBoxData = true;
 
 class _CheckOutState extends State<CheckOut> {
   @override
@@ -300,9 +301,24 @@ class _CheckOutState extends State<CheckOut> {
               padding: const EdgeInsets.only(right: 35, left: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Image(
-                    image: AssetImage("assets/images/hApplePay.png"),
+                children: [
+                  Stack(
+                    children: [
+                      Image(
+                        image: AssetImage("assets/images/hApplePay.png"),
+                      ),
+                      Checkbox(
+                        shape: CircleBorder(),
+                        fillColor: MaterialStateProperty.all(
+                          Color(0xFF39CE8A),
+                        ),
+                        value: checkBoxData,
+                        onChanged: (value) {
+                          checkBoxData = value!;
+                          setState(() {});
+                        },
+                      ),
+                    ],
                   ),
                   Image(
                     image: AssetImage("assets/images/hvisa-logo.png"),
