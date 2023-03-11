@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+import 'onboarding_third_screen.dart';
+
 class OnboardingSecondScreen extends StatefulWidget {
   const OnboardingSecondScreen({Key? key}) : super(key: key);
 
@@ -39,12 +42,22 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                       ],
                     ),
                   ),
-                  const Text(
-                    "Skip",
-                    style: TextStyle(
-                        fontFamily: "Gorditas-Regular.ttf",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Skip",
+                      style: TextStyle(
+                          fontFamily: "Gorditas-Regular.ttf",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400),
+                    ),
                   )
                 ],
               ),
@@ -81,22 +94,32 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
               const SizedBox(
                 height: 25,
               ),
-              Container(
-                  height: 50,
-                  width: 300,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Color(0xFFF67952)),
-                  child: const Center(
-                    child: Text(
-                      "Next >>",
-                      style: TextStyle(
-                          fontFamily: "Gorditas-Regular.ttf",
-                          color: Colors.white,
-                          fontSize: 23,
-                          fontWeight: FontWeight.w400),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnboardingThirdScreen(),
                     ),
-                  )),
+                  );
+                },
+                child: Container(
+                    height: 50,
+                    width: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Color(0xFFF67952)),
+                    child: const Center(
+                      child: Text(
+                        "Next >>",
+                        style: TextStyle(
+                            fontFamily: "Gorditas-Regular.ttf",
+                            color: Colors.white,
+                            fontSize: 23,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    )),
+              ),
             ],
           ),
         ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+import 'onboarding_second_screen.dart';
+
 class OnboardingFirstScreen extends StatefulWidget {
   const OnboardingFirstScreen({Key? key}) : super(key: key);
 
@@ -39,12 +42,22 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                       ],
                     ),
                   ),
-                  const Text(
-                    "Skip",
-                    style: TextStyle(
-                        fontFamily: "Gorditas-Regular.ttf",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Skip",
+                      style: TextStyle(
+                          fontFamily: "Gorditas-Regular.ttf",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400),
+                    ),
                   )
                 ],
               ),
@@ -57,7 +70,7 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                 width: 323,
               ),
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
               const Text(
                 "Choose Product",
@@ -67,7 +80,7 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                 height: 20,
               ),
               const Text(
-                "A product is the item offerd for sale. A product cab be a service for an item. It can be physical or in virtual or cyber form",
+                "A product is the item offerd for sale.\n A product cab be a service for an item. It can be \n physical or in virtual or cyber form",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: "Gorditas-Regular.ttf",
@@ -78,7 +91,16 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
               const SizedBox(
                 height: 25,
               ),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnboardingSecondScreen(),
+                    ),
+                  );
+                },
+                child: Container(
                   height: 50,
                   width: 300,
                   decoration: BoxDecoration(
@@ -93,7 +115,9 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                           fontSize: 23,
                           fontWeight: FontWeight.w400),
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

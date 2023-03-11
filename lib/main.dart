@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'onboarding_screen.dart';
+
 import 'bottom_bar_screen.dart';
 
 void main() {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomBarScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
