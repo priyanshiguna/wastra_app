@@ -505,7 +505,7 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
                                       ),
                                       SizedBox(
                                         height: 22,
-                                        width: 80,
+                                        // width: 80,
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                             shape: RoundedRectangleBorder(

@@ -237,7 +237,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Divider(
                     color: Colors.black45, //color of divider
                     height: 1, //height spacing of divider
-                    thickness: 2, //thickness of divier line
+                    thickness: 2, //thickness of divider line
                     indent: 35, //spacing at the start of divider
                     endIndent: 35, //spacing at the end of divider
                   ),
@@ -262,7 +262,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -281,13 +281,14 @@ class _SignupScreenState extends State<SignupScreen> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                            color: Color(0x40000000),
-                            blurRadius: 12,
-                            spreadRadius: 1,
-                            offset: Offset(
-                              0,
-                              5,
-                            ))
+                          color: Color(0x40000000),
+                          blurRadius: 12,
+                          spreadRadius: 1,
+                          offset: Offset(
+                            0,
+                            5,
+                          ),
+                        ),
                       ]),
                   child: Image.asset(
                     "assets/images/facebook.png",
