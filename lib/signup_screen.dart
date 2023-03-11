@@ -341,12 +341,12 @@ class _SignupScreenState extends State<SignupScreen> {
                               fontSize: 18,
                               fontWeight: FontWeight.w500)),
                       TextSpan(
-                          text: " Sign Up",
+                          text: " Login",
                           style: TextStyle(
                               fontFamily: "Gorditas-Regular.ttf",
                               color: Colors.black,
                               fontSize: 18,
-                              fontWeight: FontWeight.w500)),
+                              fontWeight: FontWeight.w600)),
                     ],
                   ),
                 ),
