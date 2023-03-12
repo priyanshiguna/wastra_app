@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/payment_done_screen.dart';
 
-class CheckOut extends StatefulWidget {
-  const CheckOut({Key? key}) : super(key: key);
+class CheckOutScreen extends StatefulWidget {
+  const CheckOutScreen({Key? key}) : super(key: key);
   @override
-  State<CheckOut> createState() => _CheckOutState();
+  State<CheckOutScreen> createState() => _CheckOutScreenState();
 }
 
 bool checkBoxData = true;
 
-class _CheckOutState extends State<CheckOut> {
+class _CheckOutScreenState extends State<CheckOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,7 @@ class _CheckOutState extends State<CheckOut> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -125,9 +125,9 @@ class _CheckOutState extends State<CheckOut> {
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.shade700),
-                color: Color(0xFFFBFBFD),
+                color: const Color(0xFFFBFBFD),
                 //color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),
               ),
@@ -296,7 +296,7 @@ class _CheckOutState extends State<CheckOut> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.only(right: 35, left: 10),
               child: Row(
@@ -304,13 +304,13 @@ class _CheckOutState extends State<CheckOut> {
                 children: [
                   Stack(
                     children: [
-                      Image(
+                      const Image(
                         image: AssetImage("assets/images/hApplePay.png"),
                       ),
                       Checkbox(
-                        shape: CircleBorder(),
+                        shape: const CircleBorder(),
                         fillColor: MaterialStateProperty.all(
-                          Color(0xFF39CE8A),
+                          const Color(0xFF39CE8A),
                         ),
                         value: checkBoxData,
                         onChanged: (value) {
@@ -320,13 +320,13 @@ class _CheckOutState extends State<CheckOut> {
                       ),
                     ],
                   ),
-                  Image(
+                  const Image(
                     image: AssetImage("assets/images/hvisa-logo.png"),
                   ),
-                  Image(
+                  const Image(
                     image: AssetImage("assets/images/hMastercard.png"),
                   ),
-                  Image(
+                  const Image(
                     image: AssetImage("assets/images/hpaypal.png"),
                   ),
                 ],
@@ -338,7 +338,7 @@ class _CheckOutState extends State<CheckOut> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PaymentDoneScreen(),
+                    builder: (context) => const PaymentDoneScreen(),
                   ),
                 );
               },
@@ -346,20 +346,20 @@ class _CheckOutState extends State<CheckOut> {
                 height: 55,
                 width: 255,
                 alignment: Alignment.center,
-                padding: EdgeInsets.only(left: 10, right: 10),
+                padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       height: 38,
                       width: 38,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xFFFBFBFD),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward,
-                        color: const Color(0xFFF67952),
+                        color: Color(0xFFF67952),
                         size: 21,
                       ),
                     ),

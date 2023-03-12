@@ -23,7 +23,8 @@ class ContainerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      width: 380,
+      padding: const EdgeInsets.only(left: 5, right: 10),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
@@ -43,7 +44,7 @@ class ContainerScreen extends StatelessWidget {
         children: [
           Container(
             width: 84.0,
-            height: 73.0,
+            height: 80.0,
             margin: const EdgeInsets.all(10),
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -103,12 +104,13 @@ class ContainerScreen extends StatelessWidget {
               isButton!
                   ? ElevatedButton(
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all(Size(00, 27)),
+                        minimumSize:
+                            MaterialStateProperty.all(const Size(00, 27)),
                         elevation: MaterialStateProperty.all(0),
                         backgroundColor:
-                            MaterialStateProperty.all(Color(0xFFF67952)),
+                            MaterialStateProperty.all(const Color(0xFFF67952)),
                         shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
+                          const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(41),
                             ),
@@ -125,7 +127,7 @@ class ContainerScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: onPress)
-                  : SizedBox(),
+                  : const SizedBox(),
             ],
           ),
         ],

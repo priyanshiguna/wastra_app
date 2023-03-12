@@ -19,92 +19,145 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Column(
-            children: [
-              const Text(
-                "My Orders",
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w500,
-                  //fontFamily: "Gorditas",
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(height: 20),
-              const TabBar(
-                physics: BouncingScrollPhysics(),
-                unselectedLabelStyle: TextStyle(),
-                indicatorWeight: 6,
-                indicatorColor: Color(0xFFF67952),
-                labelColor: Color(0xFFF67952),
-                unselectedLabelColor: Colors.black,
-                tabs: [
-                  Tab(
-                    text: "Ongoing",
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Column(
+              children: [
+                const Text(
+                  "My Orders",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500,
+                    //fontFamily: "Gorditas",
+                    color: Colors.black,
                   ),
-                  Tab(
-                    text: "Complete",
-                  ),
-                ],
-              ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    Column(
-                      children: [
-                        const SizedBox(height: 20),
-                        ContainerScreen(
-                          color: Colors.grey[300],
-                          image: "assets/images/htops.png",
-                          text: "Henley Shirts",
-                          subtext: "\$250",
-                          titletext: "In Delivery",
-                        ),
-                        const SizedBox(height: 12.0),
-                        const ContainerScreen(
-                          color: Color(0xffdef1ed),
-                          image: "assets/images/hshirt.png",
-                          text: "Casual Shirts",
-                          subtext: "\$145",
-                          titletext: "In Delivery",
-                        ),
-                        const SizedBox(height: 15.0),
-                        ContainerScreen(
-                          color: Colors.grey[200],
-                          image: "assets/images/htshirt.png",
-                          text: "Casual Nolin",
-                          subtext: "\$225",
-                          titletext: "In Delivery",
-                        ),
-                        const SizedBox(height: 15.0),
-                        ContainerScreen(
-                          color: Colors.grey[200],
-                          image: "assets/images/htop.png",
-                          text: "Casual Nolin",
-                          subtext: "\$225",
-                          titletext: "In Delivery",
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        ContainerScreen(
-                          color: Colors.grey[200],
-                          image: "assets/images/htop.png",
-                          text: "Casual Nolin",
-                          subtext: "\$225",
-                          titletext: "Completed",
-                          isButton: true,
-                          onPress: () {
-                            dialogBox();
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, right: 13, left: 13),
+                  child: const TabBar(
+                    physics: BouncingScrollPhysics(),
+                    unselectedLabelStyle: TextStyle(
+                      fontSize: 14,
+                      fontFamily: "Gordita",
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                    labelStyle: TextStyle(
+                      fontSize: 14,
+                      fontFamily: "Gordita",
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                    indicatorWeight: 6,
+                    indicatorColor: Color(0xFFF67952),
+                    labelColor: Color(0xFFF67952),
+                    unselectedLabelColor: Colors.black,
+                    tabs: [
+                      Tab(
+                        text: "Ongoing",
+                      ),
+                      Tab(
+                        text: "Complete",
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      Column(
+                        children: [
+                          const SizedBox(height: 30),
+                          ContainerScreen(
+                            color: Colors.grey[300],
+                            image: "assets/images/htops.png",
+                            text: "Henley Shirts",
+                            subtext: "\$250",
+                            titletext: "In Delivery",
+                          ),
+                          const SizedBox(height: 12.0),
+                          const ContainerScreen(
+                            color: Color(0xffdef1ed),
+                            image: "assets/images/hshirt.png",
+                            text: "Casual Shirts",
+                            subtext: "\$145",
+                            titletext: "In Delivery",
+                          ),
+                          const SizedBox(height: 15.0),
+                          ContainerScreen(
+                            color: Colors.grey[200],
+                            image: "assets/images/htshirt.png",
+                            text: "Casual Nolin",
+                            subtext: "\$225",
+                            titletext: "In Delivery",
+                          ),
+                          const SizedBox(height: 15.0),
+                          ContainerScreen(
+                            color: Colors.grey[200],
+                            image: "assets/images/htop.png",
+                            text: "Casual Nolin",
+                            subtext: "\$225",
+                            titletext: "In Delivery",
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(height: 20),
+                          ContainerScreen(
+                            color: Colors.grey[300],
+                            image: "assets/images/htops.png",
+                            text: "Henley Shirts",
+                            subtext: "\$250",
+                            titletext: "In Delivery",
+                            isButton: true,
+                            onPress: () {
+                              dialogBox();
+                            },
+                          ),
+                          const SizedBox(height: 12.0),
+                          ContainerScreen(
+                            color: const Color(0xffdef1ed),
+                            image: "assets/images/hshirt.png",
+                            text: "Casual Shirts",
+                            subtext: "\$145",
+                            titletext: "In Delivery",
+                            isButton: true,
+                            onPress: () {
+                              dialogBox();
+                            },
+                          ),
+                          const SizedBox(height: 15.0),
+                          ContainerScreen(
+                            color: Colors.grey[200],
+                            image: "assets/images/htshirt.png",
+                            text: "Casual Nolin",
+                            subtext: "\$225",
+                            titletext: "In Delivery",
+                            isButton: true,
+                            onPress: () {
+                              dialogBox();
+                            },
+                          ),
+                          const SizedBox(height: 15.0),
+                          ContainerScreen(
+                            color: Colors.grey[200],
+                            image: "assets/images/htop.png",
+                            text: "Casual Nolin",
+                            subtext: "\$225",
+                            titletext: "In Delivery",
+                            isButton: true,
+                            onPress: () {
+                              dialogBox();
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -119,7 +172,7 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
 
   dialogBox() {
     showModalBottomSheet(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(50),
             topLeft: Radius.circular(50),
@@ -134,7 +187,7 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
+                  const Text(
                     "Leave a review",
                     style: TextStyle(
                       fontSize: 20.0,
@@ -349,7 +402,7 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
                           Navigator.pop(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => OrderCompleteScreen(),
+                              builder: (context) => const OrderCompleteScreen(),
                             ),
                           );
                         },

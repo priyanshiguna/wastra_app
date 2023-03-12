@@ -16,12 +16,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => OnboardingFirstScreen(),
-            )));
+      const Duration(seconds: 4),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OnboardingFirstScreen(),
+        ),
+      ),
+    );
   }
 
   @override

@@ -506,7 +506,7 @@ class _MyCartState extends State<MyCart> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CheckOut(),
+                      builder: (context) => CheckOutScreen(),
                     ),
                   );
                 },

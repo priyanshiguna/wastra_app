@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'onboarding_screen.dart';
-
-import 'bottom_bar_screen.dart';
+import 'package:wastra_app/checkout_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoardingScreen(),
+      home: const CheckOutScreen(),
     );
   }
 }
