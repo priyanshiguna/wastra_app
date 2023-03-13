@@ -7,9 +7,9 @@ class CheckOutScreen extends StatefulWidget {
   State<CheckOutScreen> createState() => _CheckOutScreenState();
 }
 
-bool checkBoxData = true;
-
 class _CheckOutScreenState extends State<CheckOutScreen> {
+  int checkBoxData = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
       appBar: AppBar(
         title: const Text(
           "Checkout",
-          //textDirection: TextDirection.,
         ),
         elevation: 0,
         titleTextStyle: const TextStyle(
@@ -296,43 +295,46 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.only(right: 35, left: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Stack(
+            Container(
+              height: 90,
+              child: ListView.separated(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                separatorBuilder: (context, index) => const SizedBox(width: 14),
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    checkBoxData = index;
+                    setState(() {});
+                  },
+                  child: Stack(
+                    alignment: Alignment.topRight,
                     children: [
-                      const Image(
-                        image: AssetImage("assets/images/hApplePay.png"),
-                      ),
-                      Checkbox(
-                        shape: const CircleBorder(),
-                        fillColor: MaterialStateProperty.all(
-                          const Color(0xFF39CE8A),
+                      Container(
+                        height: 60,
+                        width: 70,
+                        margin: const EdgeInsets.only(top: 10, right: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        value: checkBoxData,
-                        onChanged: (value) {
-                          checkBoxData = value!;
-                          setState(() {});
-                        },
+                        child: const Image(
+                          image: AssetImage("assets/images/hApplePay.png"),
+                        ),
                       ),
+                      checkBoxData == index
+                          ? Image.asset(
+                              "assets/images/check_box.png",
+                              height: 25,
+                              width: 25,
+                            )
+                          : const SizedBox(),
                     ],
                   ),
-                  const Image(
-                    image: AssetImage("assets/images/hvisa-logo.png"),
-                  ),
-                  const Image(
-                    image: AssetImage("assets/images/hMastercard.png"),
-                  ),
-                  const Image(
-                    image: AssetImage("assets/images/hpaypal.png"),
-                  ),
-                ],
+                ),
               ),
             ),
-            const SizedBox(height: 40.0),
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -347,6 +349,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 width: 255,
                 alignment: Alignment.center,
                 padding: const EdgeInsets.only(left: 10, right: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xFFF67952),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -372,10 +378,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       ),
                     ),
                   ],
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xFFF67952),
                 ),
               ),
             ),
