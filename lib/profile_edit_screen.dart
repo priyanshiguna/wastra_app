@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/common_widget/appbar_container.dart';
 
-class ProfileScreenOne extends StatefulWidget {
-  const ProfileScreenOne({Key? key}) : super(key: key);
+class ProfileEditScreen extends StatefulWidget {
+  const ProfileEditScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreenOne> createState() => _ProfileScreenOneState();
+  State<ProfileEditScreen> createState() => _ProfileEditScreenState();
 }
 
-class _ProfileScreenOneState extends State<ProfileScreenOne> {
+class _ProfileEditScreenState extends State<ProfileEditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
