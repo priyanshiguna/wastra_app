@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/checkout_screen.dart';
+import 'package:wastra_app/profile_new_card_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,6 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CheckOutScreen(),
+      home: const ProfileAddNewCardScreen(),
     );
   }
 }
