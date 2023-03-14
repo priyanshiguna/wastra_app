@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/profile_screen.dart';
 
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
@@ -21,12 +20,7 @@ class _ProfileAddNewAddressScreenState
         padding: const EdgeInsets.only(left: 80, bottom: 10),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ProfilePageScreen(),
-              ),
-            );
+            Navigator.pop(context);
           },
           child: const AppButton(
             title: "Add",

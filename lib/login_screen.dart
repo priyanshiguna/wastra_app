@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/signup_screen.dart';
 
+import 'app_common_widget/text_fill_common.dart';
 import 'common/app_button.dart';
 import 'forgot_first_screen.dart';
 
@@ -41,93 +42,20 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                height: 57,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFFFBFBFD),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x40000000),
-                      blurRadius: 12,
-                      spreadRadius: 1,
-                      offset: Offset(0, 5),
-                    )
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    const SizedBox(width: 10),
-                    Container(
-                      height: 45,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color(0x1AF67952),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Image.asset("assets/images/email.png"),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    const Text(
-                      "Email",
-                      style: TextStyle(
-                          fontFamily: "Gordita",
-                          color: Color(0x59000000),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
-                ),
+              const TextFillContainer(
+                isRequired: true,
+                image: "assets/images/email.png",
+                text: "Email",
+                isSelect: false,
               ),
               const SizedBox(height: 20),
-              Container(
-                height: 57,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color(0xFFFBFBFD),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0x40000000),
-                        blurRadius: 12,
-                        spreadRadius: 1,
-                        offset: Offset(0, 5),
-                      )
-                    ]),
-                child: Row(
-                  children: [
-                    const SizedBox(width: 10),
-                    Container(
-                      height: 45,
-                      width: 48,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color(0x1AF67952),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset("assets/images/lock.png"),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Text(
-                      "Password",
-                      style: TextStyle(
-                          fontFamily: "Gordita",
-                          color: Color(0x59000000),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
-                ),
+              const TextFillContainer(
+                isRequired: true,
+                image: "assets/images/lock.png",
+                text: "Password",
+                isSelect: false,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               GestureDetector(
                 onTap: () {
                   Navigator.push(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'app_common_widget/text_fill_common.dart';
 import 'bottom_bar_screen.dart';
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
@@ -55,108 +56,28 @@ class _ForgotThirdScreenState extends State<ForgotThirdScreen> {
                     child: Text(
                       "Create Your New Password",
                       style: TextStyle(
-                          fontFamily: "Gordita-Medium.ttf",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
+                        fontFamily: "Gordita",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    height: 57,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFFFBFBFD),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Color(0x40000000),
-                              blurRadius: 12,
-                              spreadRadius: 1,
-                              offset: Offset(0, 5))
-                        ]),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 45,
-                            width: 48,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: const Color(0x1AF67952)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Image.asset(
-                                "assets/images/lock.png",
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            "Password",
-                            style: TextStyle(
-                                fontFamily: "Gordita",
-                                color: Color(0x59000000),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          const Spacer(),
-                          const Image(
-                              image: AssetImage("assets/images/showpass.png")),
-                        ],
-                      ),
-                    ),
+                  const TextFillContainer(
+                    isRequired: true,
+                    image: "assets/images/lock.png",
+                    text: "Password",
+                    isSelect: true,
                   ),
                   const SizedBox(height: 20),
-                  Container(
-                    height: 57,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFFFBFBFD),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: Color(0x40000000),
-                              blurRadius: 12,
-                              spreadRadius: 1,
-                              offset: Offset(0, 5))
-                        ]),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 45,
-                            width: 48,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: const Color(
-                                  0x1AF67952,
-                                )),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Image.asset("assets/images/lock.png"),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const Text(
-                            "Create Password",
-                            style: TextStyle(
-                                fontFamily: "Gordita",
-                                color: Color(0x59000000),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          const Spacer(),
-                          const Image(
-                              image: AssetImage("assets/images/showpass.png")),
-                        ],
-                      ),
-                    ),
+                  const TextFillContainer(
+                    isRequired: true,
+                    image: "assets/images/lock.png",
+                    text: "Create Password",
+                    isSelect: true,
                   ),
                 ],
               ),

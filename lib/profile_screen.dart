@@ -3,6 +3,8 @@ import 'package:wastra_app/profile_address_screen.dart';
 import 'package:wastra_app/profile_edit_screen.dart';
 import 'package:wastra_app/profile_payment_screen.dart';
 
+import 'login_screen.dart';
+
 class ProfilePageScreen extends StatefulWidget {
   const ProfilePageScreen({Key? key}) : super(key: key);
 
@@ -188,8 +190,17 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                       ),
                     ),
                     const Spacer(),
-                    const Icon(Icons.keyboard_arrow_right,
-                        color: Colors.grey, size: 30),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ));
+                      },
+                      icon: const Icon(Icons.keyboard_arrow_right,
+                          color: Colors.grey, size: 30),
+                    ),
                   ],
                 ),
               ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/common_widget/appbar_container.dart';
-import 'package:wastra_app/profile_screen.dart';
 
+import 'app_common_widget/text_fill_common.dart';
 import 'common/app_button.dart';
 
 class ProfileEditScreen extends StatefulWidget {
@@ -19,12 +19,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
         padding: const EdgeInsets.only(left: 80, bottom: 10),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ProfilePageScreen(),
-              ),
-            );
+            Navigator.pop(context);
           },
           child: const AppButton(
             title: "Add",
@@ -40,33 +35,36 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                  Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(0, 3),
-                            color: Color(0x40000000),
-                          ),
-                        ],
-                        color: Colors.white),
-                    child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 12),
-                      child: Text(
-                        "Jacks",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: "Gordita",
-                            color: Colors.black),
-                      ),
-                    ),
+                  const TextFillContainer(
+                    text: "jacks",
                   ),
+                  // Container(
+                  //   height: 60,
+                  //   width: double.infinity,
+                  //   decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(10),
+                  //       boxShadow: const [
+                  //         BoxShadow(
+                  //           spreadRadius: 0,
+                  //           blurRadius: 10,
+                  //           offset: Offset(0, 3),
+                  //           color: Color(0x40000000),
+                  //         ),
+                  //       ],
+                  //       color: Colors.white),
+                  //   child: const Padding(
+                  //     padding:
+                  //         EdgeInsets.symmetric(vertical: 20, horizontal: 12),
+                  //     child: Text(
+                  //       "Jacks",
+                  //       style: TextStyle(
+                  //           fontSize: 14,
+                  //           fontWeight: FontWeight.w600,
+                  //           fontFamily: "Gordita",
+                  //           color: Colors.black),
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(height: 15),
                   Container(
                     height: 60,
