@@ -24,7 +24,7 @@ class _ProfileAddNewAddressScreenState
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProfileScreen(),
+                builder: (context) => const ProfilePageScreen(),
               ),
             );
           },

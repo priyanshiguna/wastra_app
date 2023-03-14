@@ -22,7 +22,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProfileScreen(),
+                builder: (context) => const ProfilePageScreen(),
               ),
             );
           },

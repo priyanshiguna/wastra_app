@@ -22,7 +22,7 @@ class _ProfileAddressScreenState extends State<ProfileAddressScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const AddNewAddressScreen(),
+                builder: (context) => const ProfileAddNewAddressScreen(),
               ),
             );
           },

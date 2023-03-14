@@ -23,7 +23,7 @@ class _ProfileAddNewCardScreenState extends State<ProfileAddNewCardScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProfileScreen(),
+                builder: (context) => const ProfilePageScreen(),
               ),
             );
           },

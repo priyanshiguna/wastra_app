@@ -22,7 +22,7 @@ class _ProfilePaymentScreenState extends State<ProfilePaymentScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const AddNewCardScreen(),
+                builder: (context) => const ProfileAddNewCardScreen(),
               ),
             );
           },
