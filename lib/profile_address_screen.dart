@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/common_widget/appbar_container.dart';
+import 'package:wastra_app/profile_new_address_screen.dart';
+
+import 'common/app_button.dart';
 
 class ProfileScreenTwo extends StatefulWidget {
   const ProfileScreenTwo({Key? key}) : super(key: key);
@@ -12,6 +15,22 @@ class _ProfileScreenTwoState extends State<ProfileScreenTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Padding(
+        padding: const EdgeInsets.only(left: 80, bottom: 10),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AddNewAddressScreen(),
+              ),
+            );
+          },
+          child: const AppButton(
+            title: "Add New Address",
+          ),
+        ),
+      ),
       body: Column(
         children: [
           const AppbarContainer(text: 'Address'),
@@ -154,26 +173,6 @@ class _ProfileScreenTwoState extends State<ProfileScreenTwo> {
                           height: 24,
                         )
                       ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 485),
-                Container(
-                  height: 55,
-                  width: 256,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Color(0xFFF67952)),
-                  child: const Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Add New Address",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Gordita",
-                      ),
                     ),
                   ),
                 ),

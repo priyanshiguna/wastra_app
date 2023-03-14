@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/profile_screen.dart';
 
+import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
 
 class AddNewCardScreen extends StatefulWidget {
@@ -13,6 +15,22 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Padding(
+        padding: const EdgeInsets.only(left: 80, bottom: 10),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfileScreen(),
+              ),
+            );
+          },
+          child: const AppButton(
+            title: "Add",
+          ),
+        ),
+      ),
       body: Column(
         children: [
           const AppbarContainer(text: 'Add a new card'),
@@ -202,29 +220,6 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 170),
-                Container(
-                    height: 55,
-                    width: 256,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xFFF67952)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            "Add New Card",
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontFamily: "Gordita",
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                    )),
               ],
             ),
           ),

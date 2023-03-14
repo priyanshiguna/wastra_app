@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/common_widget/appbar_container.dart';
+import 'package:wastra_app/profile_screen.dart';
+
+import 'common/app_button.dart';
 
 class ProfileScreenOne extends StatefulWidget {
   const ProfileScreenOne({Key? key}) : super(key: key);
@@ -12,6 +15,22 @@ class _ProfileScreenOneState extends State<ProfileScreenOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Padding(
+        padding: const EdgeInsets.only(left: 80, bottom: 10),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfileScreen(),
+              ),
+            );
+          },
+          child: const AppButton(
+            title: "Add",
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -203,34 +222,6 @@ class _ProfileScreenOneState extends State<ProfileScreenOne> {
                           ),
                           Icon(Icons.keyboard_arrow_down),
                         ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 240),
-                  Container(
-                    height: 55,
-                    width: 256,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        boxShadow: const [
-                          BoxShadow(
-                            spreadRadius: 0,
-                            blurRadius: 12,
-                            offset: Offset(0, 3),
-                            color: Color(0x40000000),
-                          ),
-                        ],
-                        color: const Color(0xFFF67952)),
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Add",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Gordita",
-                        ),
                       ),
                     ),
                   ),

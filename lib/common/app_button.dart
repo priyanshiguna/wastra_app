@@ -8,19 +8,19 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 55,
       width: 256,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(50),
         color: const Color(0xFFF67952),
       ),
       child: Center(
         child: Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
               fontFamily: "Gordita"),
         ),
       ),

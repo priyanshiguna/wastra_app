@@ -51,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           const SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.only(left: 20, right: 10),
             child: Column(
               children: [
                 const Text(
@@ -83,9 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 22,
                       width: 18,
                     ),
-                    const SizedBox(
-                      width: 15,
-                    ),
+                    const SizedBox(width: 15),
                     const Text(
                       "Edit Profile",
                       style: TextStyle(
@@ -108,9 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Image.asset(
@@ -118,9 +114,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 22,
                       width: 18,
                     ),
-                    const SizedBox(
-                      width: 15,
-                    ),
+                    const SizedBox(width: 15),
                     const Text(
                       "Address",
                       style: TextStyle(
@@ -143,9 +137,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Image.asset(
@@ -153,9 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 22,
                       width: 18,
                     ),
-                    const SizedBox(
-                      width: 15,
-                    ),
+                    const SizedBox(width: 15),
                     const Text(
                       "Payment",
                       style: TextStyle(
@@ -178,9 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Image.asset(
@@ -188,9 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 22,
                       width: 18,
                     ),
-                    const SizedBox(
-                      width: 15,
-                    ),
+                    const SizedBox(width: 15),
                     const Text(
                       "Logout",
                       style: TextStyle(

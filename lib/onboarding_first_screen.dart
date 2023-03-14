@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'common/app_button.dart';
 import 'login_screen.dart';
 import 'onboarding_second_screen.dart';
 
-class OnboardingFirstScreen extends StatefulWidget {
-  const OnboardingFirstScreen({Key? key}) : super(key: key);
+class OnBoardingFirst extends StatefulWidget {
+  const OnBoardingFirst({Key? key}) : super(key: key);
 
   @override
-  State<OnboardingFirstScreen> createState() => _OnboardingFirstScreenState();
+  State<OnBoardingFirst> createState() => _OnBoardingFirstState();
 }
 
-class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
+class _OnBoardingFirstState extends State<OnBoardingFirst> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Row(
@@ -24,21 +25,22 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                 children: [
                   RichText(
                     text: const TextSpan(
-                      style: TextStyle(color: Colors.black, fontSize: 36),
                       children: <TextSpan>[
                         TextSpan(
                             text: '1',
                             style: TextStyle(
-                                fontFamily: "Gorditas-Regular.ttf",
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
+                              fontFamily: "Gordita",
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black,
+                            )),
                         TextSpan(
                             text: '/3 ',
                             style: TextStyle(
-                                fontFamily: "Gorditas-Regular.ttf",
-                                color: Colors.black26,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
+                                fontFamily: "Gordita",
+                                color: Color(0x80000000),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600)),
                       ],
                     ),
                   ),
@@ -47,16 +49,18 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
+                          builder: (context) => const LoginPage(),
                         ),
                       );
                     },
                     child: const Text(
                       "Skip",
                       style: TextStyle(
-                          fontFamily: "Gorditas-Regular.ttf",
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400),
+                        fontFamily: "Gordita",
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+                      ),
                     ),
                   )
                 ],
@@ -70,52 +74,43 @@ class _OnboardingFirstScreenState extends State<OnboardingFirstScreen> {
                 width: 323,
               ),
               const SizedBox(
-                height: 30,
+                height: 40,
               ),
               const Text(
                 "Choose Product",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "Gordita",
+                  color: Colors.black,
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
               const Text(
-                "A product is the item offerd for sale.\n A product cab be a service for an item. It can be \n physical or in virtual or cyber form",
+                "A product is the item offerd for sale.\nA product cab be a service for an item. It can be \nphysical or in virtual or cyber form",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontFamily: "Gorditas-Regular.ttf",
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black54),
+                    fontFamily: "Gordita",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0x80000000)),
               ),
               const SizedBox(
-                height: 25,
+                height: 30,
               ),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const OnboardingSecondScreen(),
+                      builder: (context) => const OnBoardingSecond(),
                     ),
                   );
                 },
-                child: Container(
-                  height: 50,
-                  width: 300,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Color(0xFFF67952)),
-                  child: const Center(
-                    child: Text(
-                      "Next >",
-                      style: TextStyle(
-                          fontFamily: "Gorditas-Regular.ttf",
-                          color: Colors.white,
-                          fontSize: 23,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                child: const AppButton(
+                  title: "Next >",
                 ),
               ),
             ],

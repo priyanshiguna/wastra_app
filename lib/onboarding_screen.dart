@@ -20,7 +20,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => OnboardingFirstScreen(),
+          builder: (context) => OnBoardingFirst(),
         ),
       ),
     );

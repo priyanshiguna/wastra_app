@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'common/app_button.dart';
 import 'login_screen.dart';
 import 'onboarding_third_screen.dart';
 
-class OnboardingSecondScreen extends StatefulWidget {
-  const OnboardingSecondScreen({Key? key}) : super(key: key);
+class OnBoardingSecond extends StatefulWidget {
+  const OnBoardingSecond({Key? key}) : super(key: key);
 
   @override
-  State<OnboardingSecondScreen> createState() => _OnboardingSecondScreenState();
+  State<OnBoardingSecond> createState() => _OnBoardingSecondState();
 }
 
-class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
+class _OnBoardingSecondState extends State<OnBoardingSecond> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Row(
@@ -24,21 +25,23 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                 children: [
                   RichText(
                     text: const TextSpan(
-                      style: TextStyle(color: Colors.black, fontSize: 36),
                       children: <TextSpan>[
                         TextSpan(
-                            text: '2',
-                            style: TextStyle(
-                                fontFamily: "Gorditas-Regular.ttf",
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
+                          text: '2',
+                          style: TextStyle(
+                            fontFamily: "Gordita",
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black,
+                          ),
+                        ),
                         TextSpan(
                             text: '/3 ',
                             style: TextStyle(
-                                fontFamily: "Gorditas-Regular.ttf",
-                                color: Colors.black26,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
+                                fontFamily: "Gordita",
+                                color: Color(0x80000000),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600)),
                       ],
                     ),
                   ),
@@ -47,16 +50,18 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
+                          builder: (context) => const LoginPage(),
                         ),
                       );
                     },
                     child: const Text(
                       "Skip",
                       style: TextStyle(
-                          fontFamily: "Gorditas-Regular.ttf",
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400),
+                        fontFamily: "Gordita",
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+                      ),
                     ),
                   )
                 ],
@@ -70,55 +75,45 @@ class _OnboardingSecondScreenState extends State<OnboardingSecondScreen> {
                 width: 323,
               ),
               const SizedBox(
-                height: 10,
+                height: 40,
               ),
               const Text(
                 "Choose Product",
                 style: TextStyle(
-                    fontFamily: "Gorditas-Regular.ttf",
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500),
+                  fontFamily: "Gordita",
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
               const Text(
-                "Payment is in transfer of money services in exchange product or Payment typicallyt made terms agreed",
+                "Payment is in transfer of money\nservices in exchange product or Payments\ntypically made terms agreed",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontFamily: "Gorditas-Regular.ttf",
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black54),
+                  fontFamily: "Gordita",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0x80000000),
+                ),
               ),
               const SizedBox(
-                height: 25,
+                height: 30,
               ),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const OnboardingThirdScreen(),
+                      builder: (context) => const OnBoardingThird(),
                     ),
                   );
                 },
-                child: Container(
-                    height: 50,
-                    width: 300,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Color(0xFFF67952)),
-                    child: const Center(
-                      child: Text(
-                        "Next >>",
-                        style: TextStyle(
-                            fontFamily: "Gorditas-Regular.ttf",
-                            color: Colors.white,
-                            fontSize: 23,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    )),
+                child: const AppButton(
+                  title: "Next >>",
+                ),
               ),
             ],
           ),
