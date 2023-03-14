@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wastra_app/notification_screen.dart';
 import 'package:wastra_app/search_screen.dart';
 
+import 'app_common_widget/app_home_screen_common.dart';
+
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({Key? key}) : super(key: key);
 
@@ -101,10 +103,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SearchScreen(),
-                              ));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SearchScreen(),
+                            ),
+                          );
                         },
                         child: Image.asset(
                           "assets/images/PSearch.png",
@@ -294,198 +297,22 @@ class _HomePageScreenState extends State<HomePageScreen> {
               padding: const EdgeInsets.only(left: 20),
               child: Container(
                 width: double.infinity,
-                height: 190,
+                height: 200,
+                color: Colors.white,
                 child: ListView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image: AssetImage(
-                                    "assets/images/Predchexshirt.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                  children: const [
+                    AppCommonContainer(
+                      image: "assets/images/Predchexshirt.png",
                     ),
                     SizedBox(width: 10),
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image:
-                                    AssetImage("assets/images/Pwineshirt.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                    AppCommonContainer(
+                      image: "assets/images/Pwineshirt.png",
                     ),
                     SizedBox(width: 10),
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image: AssetImage(
-                                    "assets/images/Predchexshirt.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                    AppCommonContainer(
+                      image: "assets/images/Predchexshirt.png",
                     ),
                   ],
                 ),
@@ -523,197 +350,21 @@ class _HomePageScreenState extends State<HomePageScreen> {
               padding: const EdgeInsets.only(left: 20),
               child: SizedBox(
                 width: double.infinity,
-                height: 190,
+                height: 200,
                 child: ListView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image:
-                                    AssetImage("assets/images/Pskyshirt.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                  children: const [
+                    AppCommonContainer(
+                      image: "assets/images/Pskyshirt.png",
                     ),
                     SizedBox(width: 10),
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image:
-                                    AssetImage("assets/images/Pblackshirt.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                    AppCommonContainer(
+                      image: "assets/images/Pwhitesh.png",
                     ),
                     SizedBox(width: 10),
-                    Container(
-                      width: 154,
-                      height: 190,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFBFBFD),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Color(0xFFEFEFF2),
-                              spreadRadius: 5,
-                              blurRadius: 12.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 133,
-                              width: 142,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffEFEFF2),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                              ),
-                              child: const Image(
-                                image: AssetImage("assets/images/Pwhitesh.png"),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Text(
-                                  "Long Sleeve\nShirts",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Text(
-                                  "\$165",
-                                  style: TextStyle(
-                                    fontFamily: "Gordita",
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
+                    AppCommonContainer(
+                      image: "assets/images/Pblackshirt.png",
                     ),
                   ],
                 ),
@@ -742,67 +393,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
                 crossAxisCount: 2,
-                childAspectRatio: 0.7,
+                childAspectRatio: 0.9,
               ),
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFFBFBFD),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          color: Color(0xFFEFEFF2),
-                          spreadRadius: 5,
-                          blurRadius: 12.0,
-                          offset: Offset(0, 5))
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 143,
-                          width: double.infinity,
-                          decoration: const BoxDecoration(
-                            color: Color(0xffEFEFF2),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(15),
-                            ),
-                          ),
-                          child: const Image(
-                            image: AssetImage("assets/images/Pskyshirt.png"),
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          children: const [
-                            Text(
-                              "Long Sleeve\nShirts",
-                              style: TextStyle(
-                                fontFamily: "Gordita",
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                              ),
-                            ),
-                            Spacer(),
-                            Text(
-                              "\$165",
-                              style: TextStyle(
-                                fontFamily: "Gordita",
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                return const AppCommonContainer(
+                  image: "assets/images/Pskyshirt.png",
                 );
               },
             ),

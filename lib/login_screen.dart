@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/signup_screen.dart';
+
+import 'common/app_button.dart';
+import 'forgot_first_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -60,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //color: Color(0xFFF67952),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Color(
+                        color: const Color(
                           0x1AF67952,
                         )),
                     child: Padding(
@@ -138,46 +142,161 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                Text(
-                  "Forgot password? ",
-                  style: TextStyle(
-                      fontFamily: "Gorditas-Regular.ttf",
-                      color: Colors.black54,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500),
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotFirstScreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Forgot password? ",
+                    style: TextStyle(
+                        fontFamily: "Gorditas-Regular.ttf",
+                        color: Colors.black54,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ],
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
-            Container(
-                height: 55,
-                width: 256,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.deepOrange),
-                child: const Center(
-                  child: Text(
-                    "Log in",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )),
+            const AppButton(title: "Log in"),
+            const SizedBox(
+              height: 30,
+            ),
             Row(
               children: const [
-                Divider(
-                  color: Colors.black,
+                Expanded(
+                  child: Divider(
+                    color: Colors.black45, //color of divider
+                    height: 1, //height spacing of divider
+                    thickness: 2, //thickness of divier line
+                    indent: 35, //spacing at the start of divider
+                    endIndent: 35, //spacing at the end of divider
+                  ),
+                ),
+                Text(
+                  "Or",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black45,
+                    fontFamily: "Gorditas-Regular.ttf",
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Expanded(
+                  child: Divider(
+                    color: Colors.black45, //color of divider
+                    height: 1, //height spacing of divider
+                    thickness: 2, //thickness of divier line
+                    indent: 35, //spacing at the start of divider
+                    endIndent: 35, //spacing at the end of divider
+                  ),
                 ),
               ],
             ),
-            Container(
-              width: 100,
-              color: Colors.black,
+            const SizedBox(
+              height: 25,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SizedBox(
+                  height: 70,
+                  width: 70,
+                ),
+                Container(
+                  height: 71,
+                  width: 71,
+                  //color: Colors.lightBlueAccent,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color(0x40000000),
+                            blurRadius: 12,
+                            spreadRadius: 1,
+                            offset: Offset(
+                              0,
+                              5,
+                            ))
+                      ]),
+                  child: Image.asset(
+                    "assets/images/facebook.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                Container(
+                  height: 71,
+                  width: 71,
+                  //color: Colors.lightBlueAccent,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color(0x40000000),
+                            blurRadius: 12,
+                            spreadRadius: 1,
+                            offset: Offset(
+                              0,
+                              5,
+                            ))
+                      ]),
+                  child: Image.asset(
+                    "assets/images/google.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                const SizedBox(
+                  height: 70,
+                  width: 70,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Don't have an account?",
+                  style: TextStyle(
+                      fontFamily: "Gordita",
+                      fontSize: 15,
+                      color: Color(0xFF230A06),
+                      fontWeight: FontWeight.w300),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignupScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    " Sign Up",
+                    style: TextStyle(
+                        fontFamily: "Gordita",
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

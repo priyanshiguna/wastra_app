@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   final String title;
+
   const AppButton({Key? key, required this.title}) : super(key: key);
 
   @override
@@ -11,12 +12,12 @@ class AppButton extends StatelessWidget {
       width: 256,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: Color(0xFFF67952),
+        color: const Color(0xFFF67952),
       ),
       child: Center(
         child: Text(
           title,
-          style: const TextStyle(
+          style: TextStyle(
               color: Colors.white,
               fontSize: 16,
               fontWeight: FontWeight.w500,

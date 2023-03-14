@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'cart_checkout_screen.dart';
+
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
 
@@ -164,25 +166,34 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       ],
                     ),
                     const SizedBox(height: 20),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 55,
-                        width: 256,
-                        decoration: const BoxDecoration(
-                          color: Color(0xffF67952),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(100),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const MyCart(),
+                            ));
+                      },
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          height: 55,
+                          width: 256,
+                          decoration: const BoxDecoration(
+                            color: Color(0xffF67952),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(100),
+                            ),
                           ),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Add to Cart",
-                            style: TextStyle(
-                              color: Color(0xffFBFBFD),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Gorditas",
+                          child: const Center(
+                            child: Text(
+                              "Add to Cart",
+                              style: TextStyle(
+                                color: Color(0xffFBFBFD),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Gorditas",
+                              ),
                             ),
                           ),
                         ),

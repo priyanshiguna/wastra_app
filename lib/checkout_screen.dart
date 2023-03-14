@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/payment_done_screen.dart';
 
-class CheckOut extends StatefulWidget {
-  const CheckOut({Key? key}) : super(key: key);
+class CheckOutScreen extends StatefulWidget {
+  const CheckOutScreen({Key? key}) : super(key: key);
   @override
-  State<CheckOut> createState() => _CheckOutState();
+  State<CheckOutScreen> createState() => _CheckOutScreenState();
 }
 
-bool checkBoxData = true;
+class _CheckOutScreenState extends State<CheckOutScreen> {
+  int checkBoxData = 0;
 
-class _CheckOutState extends State<CheckOut> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,6 @@ class _CheckOutState extends State<CheckOut> {
       appBar: AppBar(
         title: const Text(
           "Checkout",
-          //textDirection: TextDirection.,
         ),
         elevation: 0,
         titleTextStyle: const TextStyle(
@@ -44,7 +43,7 @@ class _CheckOutState extends State<CheckOut> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -125,9 +124,9 @@ class _CheckOutState extends State<CheckOut> {
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.shade700),
-                color: Color(0xFFFBFBFD),
+                color: const Color(0xFFFBFBFD),
                 //color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),
               ),
@@ -296,49 +295,52 @@ class _CheckOutState extends State<CheckOut> {
                 ),
               ),
             ),
-            SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.only(right: 35, left: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Stack(
+            Container(
+              height: 90,
+              child: ListView.separated(
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                separatorBuilder: (context, index) => const SizedBox(width: 14),
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    checkBoxData = index;
+                    setState(() {});
+                  },
+                  child: Stack(
+                    alignment: Alignment.topRight,
                     children: [
-                      Image(
-                        image: AssetImage("assets/images/hApplePay.png"),
-                      ),
-                      Checkbox(
-                        shape: CircleBorder(),
-                        fillColor: MaterialStateProperty.all(
-                          Color(0xFF39CE8A),
+                      Container(
+                        height: 60,
+                        width: 70,
+                        margin: const EdgeInsets.only(top: 10, right: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        value: checkBoxData,
-                        onChanged: (value) {
-                          checkBoxData = value!;
-                          setState(() {});
-                        },
+                        child: const Image(
+                          image: AssetImage("assets/images/hApplePay.png"),
+                        ),
                       ),
+                      checkBoxData == index
+                          ? Image.asset(
+                              "assets/images/check_box.png",
+                              height: 25,
+                              width: 25,
+                            )
+                          : const SizedBox(),
                     ],
                   ),
-                  Image(
-                    image: AssetImage("assets/images/hvisa-logo.png"),
-                  ),
-                  Image(
-                    image: AssetImage("assets/images/hMastercard.png"),
-                  ),
-                  Image(
-                    image: AssetImage("assets/images/hpaypal.png"),
-                  ),
-                ],
+                ),
               ),
             ),
-            const SizedBox(height: 40.0),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PaymentDoneScreen(),
+                    builder: (context) => const PaymentDoneScreen(),
                   ),
                 );
               },
@@ -346,20 +348,24 @@ class _CheckOutState extends State<CheckOut> {
                 height: 55,
                 width: 255,
                 alignment: Alignment.center,
-                padding: EdgeInsets.only(left: 10, right: 10),
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: const Color(0xFFF67952),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       height: 38,
                       width: 38,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Color(0xFFFBFBFD),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward,
-                        color: const Color(0xFFF67952),
+                        color: Color(0xFFF67952),
                         size: 21,
                       ),
                     ),
@@ -372,10 +378,6 @@ class _CheckOutState extends State<CheckOut> {
                       ),
                     ),
                   ],
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xFFF67952),
                 ),
               ),
             ),

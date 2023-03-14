@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'common/app_button.dart';
+import 'login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -237,7 +238,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Divider(
                     color: Colors.black45, //color of divider
                     height: 1, //height spacing of divider
-                    thickness: 2, //thickness of divier line
+                    thickness: 2, //thickness of divider line
                     indent: 35, //spacing at the start of divider
                     endIndent: 35, //spacing at the end of divider
                   ),
@@ -262,7 +263,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -281,13 +282,14 @@ class _SignupScreenState extends State<SignupScreen> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                            color: Color(0x40000000),
-                            blurRadius: 12,
-                            spreadRadius: 1,
-                            offset: Offset(
-                              0,
-                              5,
-                            ))
+                          color: Color(0x40000000),
+                          blurRadius: 12,
+                          spreadRadius: 1,
+                          offset: Offset(
+                            0,
+                            5,
+                          ),
+                        ),
                       ]),
                   child: Image.asset(
                     "assets/images/facebook.png",
@@ -330,28 +332,34 @@ class _SignupScreenState extends State<SignupScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RichText(
-                  text: const TextSpan(
-                    style: TextStyle(color: Colors.black45, fontSize: 36),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: "Already have an account?",
-                          style: TextStyle(
-                              fontFamily: "Gorditas-Regular.ttf",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                      TextSpan(
-                          text: " Sign Up",
-                          style: TextStyle(
-                              fontFamily: "Gorditas-Regular.ttf",
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
-                    ],
+                const Text(
+                  "Already have an account?",
+                  style: TextStyle(
+                      fontFamily: "Gordita",
+                      fontSize: 15,
+                      color: Color(0xFF230A06),
+                      fontWeight: FontWeight.w300),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    " Login",
+                    style: TextStyle(
+                        fontFamily: "Gordita",
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
