@@ -19,7 +19,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     const HomePageScreen(),
     const OrderCompleteScreen(),
     const FavoriteScreen(),
-    const ProfileScreen(),
+    const ProfilePageScreen(),
   ];
 
   @override

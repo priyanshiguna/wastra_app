@@ -4,14 +4,14 @@ import 'package:wastra_app/profile_new_card_screen.dart';
 
 import 'common/app_button.dart';
 
-class ProfileScreenThree extends StatefulWidget {
-  const ProfileScreenThree({Key? key}) : super(key: key);
+class ProfilePaymentScreen extends StatefulWidget {
+  const ProfilePaymentScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreenThree> createState() => _ProfileScreenThreeState();
+  State<ProfilePaymentScreen> createState() => _ProfilePaymentScreenState();
 }
 
-class _ProfileScreenThreeState extends State<ProfileScreenThree> {
+class _ProfilePaymentScreenState extends State<ProfilePaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

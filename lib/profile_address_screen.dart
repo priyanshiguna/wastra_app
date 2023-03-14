@@ -4,14 +4,14 @@ import 'package:wastra_app/profile_new_address_screen.dart';
 
 import 'common/app_button.dart';
 
-class ProfileScreenTwo extends StatefulWidget {
-  const ProfileScreenTwo({Key? key}) : super(key: key);
+class ProfileAddressScreen extends StatefulWidget {
+  const ProfileAddressScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreenTwo> createState() => _ProfileScreenTwoState();
+  State<ProfileAddressScreen> createState() => _ProfileAddressScreenState();
 }
 
-class _ProfileScreenTwoState extends State<ProfileScreenTwo> {
+class _ProfileAddressScreenState extends State<ProfileAddressScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

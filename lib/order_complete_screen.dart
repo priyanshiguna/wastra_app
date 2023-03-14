@@ -32,9 +32,9 @@ class _OrderCompleteScreenState extends State<OrderCompleteScreen> {
                     color: Colors.black,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15, right: 13, left: 13),
-                  child: const TabBar(
+                const Padding(
+                  padding: EdgeInsets.only(top: 15, right: 13, left: 13),
+                  child: TabBar(
                     physics: BouncingScrollPhysics(),
                     unselectedLabelStyle: TextStyle(
                       fontSize: 14,

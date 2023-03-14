@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/profile_address_screen.dart';
+import 'package:wastra_app/profile_edit_screen.dart';
 import 'package:wastra_app/profile_payment_screen.dart';
-import 'package:wastra_app/profile_second_screen.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfilePageScreen extends StatefulWidget {
+  const ProfilePageScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<ProfilePageScreen> createState() => _ProfilePageScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfilePageScreenState extends State<ProfilePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfileScreenOne(),
+                              builder: (context) => const ProfileEditScreen(),
                             ));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right,
@@ -129,7 +129,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfileScreenTwo(),
+                              builder: (context) =>
+                                  const ProfileAddressScreen(),
                             ));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right,
@@ -160,7 +161,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfileScreenThree(),
+                              builder: (context) =>
+                                  const ProfilePaymentScreen(),
                             ));
                       },
                       icon: const Icon(Icons.keyboard_arrow_right,

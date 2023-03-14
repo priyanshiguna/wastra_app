@@ -4,14 +4,15 @@ import 'package:wastra_app/profile_screen.dart';
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
 
-class AddNewCardScreen extends StatefulWidget {
-  const AddNewCardScreen({Key? key}) : super(key: key);
+class ProfileAddNewCardScreen extends StatefulWidget {
+  const ProfileAddNewCardScreen({Key? key}) : super(key: key);
 
   @override
-  State<AddNewCardScreen> createState() => _AddNewCardScreenState();
+  State<ProfileAddNewCardScreen> createState() =>
+      _ProfileAddNewCardScreenState();
 }
 
-class _AddNewCardScreenState extends State<AddNewCardScreen> {
+class _ProfileAddNewCardScreenState extends State<ProfileAddNewCardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
