@@ -8,8 +8,16 @@ class CheckOutScreen extends StatefulWidget {
 }
 
 class _CheckOutScreenState extends State<CheckOutScreen> {
+  bool container = false;
+  var currentIndex = 0;
   int checkBoxData = 0;
-
+  bool agree = false;
+  List<String> imageList = [
+    "assets/images/hApplePay.png",
+    "assets/images/hvisa-logo.png",
+    "assets/images/hMastercard.png",
+    "assets/images/hpaypal.png"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +68,16 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             Container(
               height: 86,
               width: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Color(0xADD7D9DB),
+                    spreadRadius: 5,
+                    blurRadius: 10.0,
+                    offset: Offset(0, 5),
+                  )
+                ],
+
                 color: Color(0xFFFBFBFD),
                 //color: Colors.lightBlueAccent,
                 borderRadius: BorderRadius.all(
@@ -71,10 +88,23 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   children: [
-                    const Image(
-                      image: AssetImage("assets/images/Hselect.png"),
-                      height: 28,
-                      width: 28,
+                    Transform.scale(
+                      scale: 1.5,
+                      child: Checkbox(
+                        shape: CircleBorder(),
+                        fillColor: MaterialStateProperty.all(
+                          Color(0xFFF67952),
+                        ),
+                        side: BorderSide(
+                          color: Colors.grey,
+                        ),
+                        value: agree,
+                        onChanged: (value) {
+                          setState(() {
+                            agree = value ?? false;
+                          });
+                        },
+                      ),
                     ),
                     const SizedBox(width: 30),
                     RichText(
@@ -298,7 +328,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             Container(
               height: 90,
               child: ListView.separated(
-                itemCount: 4,
+                itemCount: imageList.length,
                 scrollDirection: Axis.horizontal,
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -319,8 +349,8 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        child: const Image(
-                          image: AssetImage("assets/images/hApplePay.png"),
+                        child: Image(
+                          image: AssetImage(imageList[index]),
                         ),
                       ),
                       checkBoxData == index
