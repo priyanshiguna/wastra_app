@@ -47,9 +47,9 @@ class _ProfileAddressScreenState extends State<ProfileAddressScreen> {
                       boxShadow: const [
                         BoxShadow(
                           spreadRadius: 0,
-                          blurRadius: 10,
-                          offset: Offset(0, 3),
-                          color: Color(0x40000000),
+                          blurRadius: 12,
+                          offset: Offset(0, 6),
+                          color: Color(0x1C000000),
                         ),
                       ],
                       color: Colors.white),
@@ -116,9 +116,9 @@ class _ProfileAddressScreenState extends State<ProfileAddressScreen> {
                       boxShadow: const [
                         BoxShadow(
                           spreadRadius: 0,
-                          blurRadius: 10,
-                          offset: Offset(0, 3),
-                          color: Color(0x40000000),
+                          blurRadius: 12,
+                          offset: Offset(0, 6),
+                          color: Color(0x1C000000),
                         ),
                       ],
                       color: Colors.white),

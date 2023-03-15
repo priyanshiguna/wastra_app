@@ -19,9 +19,9 @@ class NotificationCommon extends StatelessWidget {
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Color(0xADD7D9DB),
-              spreadRadius: 5,
-              blurRadius: 12.0,
-              offset: Offset(0, 5))
+              spreadRadius: 0,
+              blurRadius: 12,
+              offset: Offset(0, 6))
         ],
       ),
       child: Padding(
