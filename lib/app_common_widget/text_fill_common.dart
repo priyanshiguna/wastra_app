@@ -5,6 +5,9 @@ class TextFillContainer extends StatelessWidget {
   final String? image;
   final bool? isRequired;
   final bool? isSelect;
+  final String? hintText;
+  final ValueChanged<String>? onChanged;
+  final TextEditingController? controller;
 
   const TextFillContainer({
     Key? key,
@@ -12,6 +15,9 @@ class TextFillContainer extends StatelessWidget {
     this.image,
     this.isRequired = false,
     this.isSelect = false,
+    this.hintText,
+    this.onChanged,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -51,13 +57,21 @@ class TextFillContainer extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            Text(
-              text!,
-              style: const TextStyle(
-                  fontFamily: "Gordita",
-                  color: Color(0x59000000),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500),
+            Expanded(
+              child: TextField(
+                controller: controller,
+                onChanged: onChanged,
+                autocorrect: true,
+                decoration: InputDecoration(
+                  hintText: hintText,
+                  border: InputBorder.none,
+                  hintStyle: TextStyle(
+                      color: Color(0x59000000),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                      fontFamily: "Gordita"),
+                ),
+              ),
             ),
             const Spacer(),
             isSelect!
