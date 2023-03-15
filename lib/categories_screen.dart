@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'cart_checkout_screen.dart';
+import 'mycart_screen.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);

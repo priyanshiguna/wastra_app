@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/checkout_screen.dart';
-import 'package:wastra_app/profile_new_card_screen.dart';
+import 'package:wastra_app/bottom_bar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ProfileAddNewCardScreen(),
+      home: const BottomBarScreen(),
     );
   }
 }

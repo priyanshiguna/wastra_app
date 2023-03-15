@@ -71,10 +71,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               decoration: BoxDecoration(
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                    color: Color(0xADD7D9DB),
-                    spreadRadius: 5,
-                    blurRadius: 10.0,
-                    offset: Offset(0, 5),
+                    color: Color(0x1C000000),
+                    spreadRadius: 0,
+                    blurRadius: 12.0,
+                    offset: Offset(0, 6),
                   )
                 ],
 
