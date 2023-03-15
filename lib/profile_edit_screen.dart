@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wastra_app/common_widget/appbar_container.dart';
 
+import 'app_common_widget/text_fill_common.dart';
+import 'common/app_button.dart';
+
 class ProfileEditScreen extends StatefulWidget {
   const ProfileEditScreen({Key? key}) : super(key: key);
 
@@ -12,6 +15,17 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Padding(
+        padding: const EdgeInsets.only(left: 80, bottom: 10),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const AppButton(
+            title: "Add",
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -21,33 +35,36 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                  Container(
-                    height: 60,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                            spreadRadius: 0,
-                            blurRadius: 10,
-                            offset: Offset(0, 3),
-                            color: Color(0x40000000),
-                          ),
-                        ],
-                        color: Colors.white),
-                    child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 12),
-                      child: Text(
-                        "Jacks",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: "Gordita",
-                            color: Colors.black),
-                      ),
-                    ),
+                  const TextFillContainer(
+                    text: "jacks",
                   ),
+                  // Container(
+                  //   height: 60,
+                  //   width: double.infinity,
+                  //   decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(10),
+                  //       boxShadow: const [
+                  //         BoxShadow(
+                  //           spreadRadius: 0,
+                  //           blurRadius: 10,
+                  //           offset: Offset(0, 3),
+                  //           color: Color(0x40000000),
+                  //         ),
+                  //       ],
+                  //       color: Colors.white),
+                  //   child: const Padding(
+                  //     padding:
+                  //         EdgeInsets.symmetric(vertical: 20, horizontal: 12),
+                  //     child: Text(
+                  //       "Jacks",
+                  //       style: TextStyle(
+                  //           fontSize: 14,
+                  //           fontWeight: FontWeight.w600,
+                  //           fontFamily: "Gordita",
+                  //           color: Colors.black),
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(height: 15),
                   Container(
                     height: 60,
@@ -203,34 +220,6 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                           ),
                           Icon(Icons.keyboard_arrow_down),
                         ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 240),
-                  Container(
-                    height: 55,
-                    width: 256,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        boxShadow: const [
-                          BoxShadow(
-                            spreadRadius: 0,
-                            blurRadius: 12,
-                            offset: Offset(0, 3),
-                            color: Color(0x40000000),
-                          ),
-                        ],
-                        color: const Color(0xFFF67952)),
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Add",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Gordita",
-                        ),
                       ),
                     ),
                   ),

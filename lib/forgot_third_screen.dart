@@ -1,176 +1,86 @@
 import 'package:flutter/material.dart';
 
+import 'app_common_widget/text_fill_common.dart';
 import 'bottom_bar_screen.dart';
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
 
-class ForgotthirdScreen extends StatefulWidget {
-  const ForgotthirdScreen({Key? key}) : super(key: key);
+class ForgotThirdScreen extends StatefulWidget {
+  const ForgotThirdScreen({Key? key}) : super(key: key);
 
   @override
-  State<ForgotthirdScreen> createState() => forgot_third_screen();
+  State<ForgotThirdScreen> createState() => _ForgotThirdScreenState();
 }
 
-class forgot_third_screen extends State<ForgotthirdScreen> {
+class _ForgotThirdScreenState extends State<ForgotThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Padding(
+        padding: const EdgeInsets.only(left: 80, bottom: 10),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const BottomBarScreen(),
+              ),
+            );
+          },
+          child: const AppButton(
+            title: "Continue",
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
             const AppbarContainer(
               text: "Create New Password",
             ),
-            Column(
-              children: [
-                const SizedBox(
-                  height: 30,
-                ),
-                Image.asset(
-                  "assets/images/forgotthird.png",
-                  height: 235,
-                  width: 235,
-                ),
-                const SizedBox(
-                  height: 35,
-                ),
-                Row(
-                  children: const [
-                    SizedBox(
-                      width: 28,
-                    ),
-                    Text(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Image.asset(
+                    "assets/images/forgotthird.png",
+                    height: 219,
+                    width: 288,
+                  ),
+                  const SizedBox(height: 40),
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
                       "Create Your New Password",
                       style: TextStyle(
-                          fontFamily: "Gordita-Medium.ttf",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
+                        fontFamily: "Gordita",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 57,
-                  width: 335,
-                  //color: Colors.yellow,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color(0xFFFBFBFD),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Color(0x40000000),
-                            blurRadius: 12,
-                            spreadRadius: 1,
-                            offset: Offset(
-                              0,
-                              5,
-                            ))
-                      ]),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 10),
-                      Container(
-                        height: 45,
-                        width: 48,
-                        //color: Color(0xFFF67952),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: const Color(
-                              0x1AF67952,
-                            )),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Image.asset(
-                            "assets/images/lock.png",
-                            height: 24,
-                            width: 24,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        "Password",
-                        style: TextStyle(
-                            fontFamily: "Gorditas-Regular.ttf",
-                            color: Colors.black45,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ],
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 57,
-                  width: 335,
-                  //color: Colors.yellow,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: const Color(0xFFFBFBFD),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Color(0x40000000),
-                            blurRadius: 12,
-                            spreadRadius: 1,
-                            offset: Offset(
-                              0,
-                              5,
-                            ))
-                      ]),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 10),
-                      Container(
-                        height: 45,
-                        width: 48,
-                        //color: Color(0xFFF67952),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: const Color(
-                              0x1AF67952,
-                            )),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Image.asset("assets/images/lock.png"),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        "Create Password",
-                        style: TextStyle(
-                            fontFamily: "Gorditas-Regular.ttf",
-                            color: Colors.black45,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600),
-                      )
-                    ],
+                  const SizedBox(
+                    height: 20,
                   ),
-                ),
-                const SizedBox(
-                  height: 100,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const BottomBarScreen(),
-                      ),
-                    );
-                  },
-                  child: AppButton(
-                    title: "Continue",
+                  const TextFillContainer(
+                    isRequired: true,
+                    image: "assets/images/lock.png",
+                    text: "Password",
+                    isSelect: true,
                   ),
-                ),
-              ],
+                  const SizedBox(height: 20),
+                  const TextFillContainer(
+                    isRequired: true,
+                    image: "assets/images/lock.png",
+                    text: "Create Password",
+                    isSelect: true,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

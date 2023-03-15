@@ -117,6 +117,7 @@ class ContainerScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+                      onPressed: onPress,
                       child: const Text(
                         "Add a review",
                         style: TextStyle(
@@ -125,8 +126,7 @@ class ContainerScreen extends StatelessWidget {
                           fontFamily: "Gordita",
                           color: Color(0xFFFBFBFD),
                         ),
-                      ),
-                      onPressed: onPress)
+                      ))
                   : const SizedBox(),
             ],
           ),

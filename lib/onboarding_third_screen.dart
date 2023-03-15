@@ -1,54 +1,52 @@
 import 'package:flutter/material.dart';
 
+import 'common/app_button.dart';
 import 'login_screen.dart';
 
-class OnboardingThirdScreen extends StatefulWidget {
-  const OnboardingThirdScreen({Key? key}) : super(key: key);
+class OnBoardingThird extends StatefulWidget {
+  const OnBoardingThird({Key? key}) : super(key: key);
 
   @override
-  State<OnboardingThirdScreen> createState() => _OnboardingThirdScreenState();
+  State<OnBoardingThird> createState() => _OnBoardingThirdState();
 }
 
-class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
+class _OnBoardingThirdState extends State<OnBoardingThird> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  RichText(
-                    text: const TextSpan(
-                      style: TextStyle(color: Colors.black, fontSize: 36),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: '3/3',
-                            style: TextStyle(
-                                fontFamily: "Gorditas-Regular.ttf",
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400)),
-                      ],
-                    ),
+                  const Text(
+                    "3/3",
+                    style: TextStyle(
+                        fontFamily: "Gordita",
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black),
                   ),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
+                          builder: (context) => const LoginPage(),
                         ),
                       );
                     },
                     child: const Text(
                       "Skip",
                       style: TextStyle(
-                          fontFamily: "Gorditas-Regular.ttf",
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400),
+                        fontFamily: "Gordita",
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+                      ),
                     ),
                   )
                 ],
@@ -62,55 +60,44 @@ class _OnboardingThirdScreenState extends State<OnboardingThirdScreen> {
                 width: 323,
               ),
               const SizedBox(
-                height: 10,
+                height: 40,
               ),
               const Text(
                 "Choose Product",
                 style: TextStyle(
-                    fontFamily: "Gorditas-Regular.ttf",
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500),
+                  fontFamily: "Gordita",
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
               const Text(
-                "Business or commerce an order is a started intension either spoken to engage in a commercial transaction specific products",
+                "Business or commerce an order is a started\nintention either spoken to engage in a\ncommercial transaction specific products",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontFamily: "Gorditas-Regular.ttf",
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black54),
+                    fontFamily: "Gordita",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0x80000000)),
               ),
               const SizedBox(
-                height: 25,
+                height: 30,
               ),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
+                      builder: (context) => const LoginPage(),
                     ),
                   );
                 },
-                child: Container(
-                    height: 50,
-                    width: 300,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Color(0xFFF67952)),
-                    child: const Center(
-                      child: Text(
-                        "Get Started >>>",
-                        style: TextStyle(
-                            fontFamily: "Gorditas-Regular.ttf",
-                            color: Colors.white,
-                            fontSize: 23,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    )),
+                child: const AppButton(
+                  title: "Get Started >>>",
+                ),
               ),
             ],
           ),

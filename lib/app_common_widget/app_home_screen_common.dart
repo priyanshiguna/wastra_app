@@ -16,10 +16,10 @@ class AppCommonContainer extends StatelessWidget {
         ),
         boxShadow: <BoxShadow>[
           BoxShadow(
-              color: Color(0xFFEFEFF2),
-              spreadRadius: 5,
-              blurRadius: 12.0,
-              offset: Offset(0, 5))
+              color: Color(0x1C000000),
+              spreadRadius: 0,
+              blurRadius: 12,
+              offset: Offset(0, 6))
         ],
       ),
       child: Padding(
