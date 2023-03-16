@@ -38,7 +38,7 @@ class _ProfileAddressScreenState extends State<ProfileAddressScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   height: 92,
                   width: double.infinity,
@@ -71,7 +71,7 @@ class _ProfileAddressScreenState extends State<ProfileAddressScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,

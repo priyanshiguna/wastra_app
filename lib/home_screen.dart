@@ -125,7 +125,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           color: Colors.black,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         height: 43,
                         width: 47,
@@ -240,7 +240,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white,
-                      border: Border.all(color: Color(0xD00000D)),
+                      border: Border.all(color: const Color(0xD00000D)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -292,7 +292,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Container(
