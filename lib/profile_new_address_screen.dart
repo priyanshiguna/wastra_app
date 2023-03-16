@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/profile_screen.dart';
 
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
@@ -20,7 +21,11 @@ class _ProfileAddNewAddressScreenState
         padding: const EdgeInsets.only(left: 80, bottom: 10),
         child: GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProfilePageScreen(),
+                ));
           },
           child: const AppButton(
             title: "Add",
@@ -58,8 +63,8 @@ class _ProfileAddNewAddressScreenState
                       BoxShadow(
                         spreadRadius: 0,
                         blurRadius: 12,
-                        offset: Offset(0, 3),
-                        color: Color(0x40000000),
+                        offset: Offset(0, 6),
+                        color: Color(0x1C000000),
                       ),
                     ],
                   ),
@@ -100,8 +105,8 @@ class _ProfileAddNewAddressScreenState
                       BoxShadow(
                         spreadRadius: 0,
                         blurRadius: 12,
-                        offset: Offset(0, 3),
-                        color: Color(0x40000000),
+                        offset: Offset(0, 6),
+                        color: Color(0x1C000000),
                       ),
                     ],
                   ),
@@ -142,8 +147,8 @@ class _ProfileAddNewAddressScreenState
                       BoxShadow(
                         spreadRadius: 0,
                         blurRadius: 12,
-                        offset: Offset(0, 3),
-                        color: Color(0x40000000),
+                        offset: Offset(0, 6),
+                        color: Color(0x1C000000),
                       ),
                     ],
                   ),
@@ -184,8 +189,8 @@ class _ProfileAddNewAddressScreenState
                       BoxShadow(
                         spreadRadius: 0,
                         blurRadius: 12,
-                        offset: Offset(0, 3),
-                        color: Color(0x40000000),
+                        offset: Offset(0, 6),
+                        color: Color(0x1C000000),
                       ),
                     ],
                   ),
@@ -228,8 +233,8 @@ class _ProfileAddNewAddressScreenState
                               BoxShadow(
                                 spreadRadius: 0,
                                 blurRadius: 12,
-                                offset: Offset(0, 3),
-                                color: Color(0x40000000),
+                                offset: Offset(0, 6),
+                                color: Color(0x1C000000),
                               ),
                             ],
                           ),
@@ -273,8 +278,8 @@ class _ProfileAddNewAddressScreenState
                               BoxShadow(
                                 spreadRadius: 0,
                                 blurRadius: 12,
-                                offset: Offset(0, 3),
-                                color: Color(0x40000000),
+                                offset: Offset(0, 6),
+                                color: Color(0x1C000000),
                               ),
                             ],
                           ),
