@@ -178,7 +178,7 @@ class _ProfileAddNewCardScreenState extends State<ProfileAddNewCardScreen> {
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                             color: Colors.black,
-                            fontFamily: "Gordita",
+                            fontFamily: "Gordian",
                           ),
                         ),
                         const SizedBox(height: 10),
