@@ -12,11 +12,18 @@ class ForgotSecondScreen extends StatefulWidget {
 }
 
 class _ForgotSecondScreenState extends State<ForgotSecondScreen> {
+  final TextEditingController fieldOne = TextEditingController();
+  final TextEditingController fieldTwo = TextEditingController();
+  final TextEditingController fieldThree = TextEditingController();
+  final TextEditingController fieldFour = TextEditingController();
+
+  String? otp;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomSheet: Padding(
-        padding: const EdgeInsets.only(left: 80, bottom: 10),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(left: 20, bottom: 10),
         child: GestureDetector(
           onTap: () {
             Navigator.push(
@@ -25,9 +32,21 @@ class _ForgotSecondScreenState extends State<ForgotSecondScreen> {
                 builder: (context) => const ForgotThirdScreen(),
               ),
             );
+            setState(() {
+              otp = fieldOne.text +
+                  fieldTwo.text +
+                  fieldThree.text +
+                  fieldFour.text;
+            });
           },
-          child: const AppButton(
-            title: "Verify",
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            runAlignment: WrapAlignment.center,
+            children: [
+              const AppButton(
+                title: "Verify",
+              ),
+            ],
           ),
         ),
       ),
@@ -38,7 +57,7 @@ class _ForgotSecondScreenState extends State<ForgotSecondScreen> {
               text: "Forgot Password",
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.only(right: 20, left: 30),
               child: Column(
                 children: [
                   const SizedBox(
@@ -57,39 +76,16 @@ class _ForgotSecondScreenState extends State<ForgotSecondScreen> {
                     height: 50,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const SizedBox(width: 25),
-                      Container(
-                        height: 55,
-                        width: 69,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.black26)),
-                      ),
-                      const SizedBox(width: 20),
-                      Container(
-                        height: 55,
-                        width: 69,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.black26)),
-                      ),
-                      const SizedBox(width: 20),
-                      Container(
-                        height: 55,
-                        width: 69,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.black26)),
-                      ),
-                      const SizedBox(width: 20),
-                      Container(
-                        height: 55,
-                        width: 69,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.black26)),
-                      ),
+                      // const SizedBox(width: 20),
+                      OtpInput(fieldOne, true),
+// auto focus
+                      OtpInput(fieldTwo, false),
+
+                      OtpInput(fieldThree, false),
+
+                      OtpInput(fieldFour, false),
                     ],
                   ),
                   const SizedBox(
@@ -130,6 +126,45 @@ class _ForgotSecondScreenState extends State<ForgotSecondScreen> {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class OtpInput extends StatelessWidget {
+  final TextEditingController controller;
+  final bool autoFocus;
+  const OtpInput(this.controller, this.autoFocus, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 55,
+      width: 69,
+      child: TextField(
+        autofocus: autoFocus,
+        textAlign: TextAlign.center,
+        keyboardType: TextInputType.number,
+        controller: controller,
+        maxLength: 1,
+        showCursor: false,
+        cursorColor: Theme.of(context).primaryColor,
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
+            borderSide: BorderSide(
+              color: Color(0xffF67952),
+            ),
+          ),
+          counterText: '',
+        ),
+        onChanged: (value) {
+          if (value.length == 1) {
+            FocusScope.of(context).nextFocus();
+          }
+        },
       ),
     );
   }

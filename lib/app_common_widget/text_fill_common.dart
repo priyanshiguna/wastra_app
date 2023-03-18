@@ -6,6 +6,8 @@ class TextFillContainer extends StatelessWidget {
   final bool? isRequired;
   final bool? isSelect;
   final String? hintText;
+  final TextInputType? keyboardType;
+
   final ValueChanged<String>? onChanged;
   final TextEditingController? controller;
 
@@ -18,6 +20,7 @@ class TextFillContainer extends StatelessWidget {
     this.hintText,
     this.onChanged,
     this.controller,
+    this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -59,13 +62,20 @@ class TextFillContainer extends StatelessWidget {
             ),
             Expanded(
               child: TextField(
+                cursorHeight: 20,
                 controller: controller,
                 onChanged: onChanged,
                 autocorrect: true,
+                style: const TextStyle(
+                    color: Color(0x59000000),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    fontFamily: "Gordita"),
+                keyboardType: keyboardType,
                 decoration: InputDecoration(
                   hintText: hintText,
                   border: InputBorder.none,
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                       color: Color(0x59000000),
                       fontWeight: FontWeight.w500,
                       fontSize: 12,
