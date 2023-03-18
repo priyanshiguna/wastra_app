@@ -126,17 +126,22 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         ),
                       ),
                       Spacer(),
-                      Container(
-                        height: 43,
-                        width: 47,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF67952),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
+                      GestureDetector(
+                        onTap: () {
+                          dialogBox();
+                        },
+                        child: Container(
+                          height: 43,
+                          width: 47,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF67952),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
                           ),
-                        ),
-                        child: Image.asset(
-                          "assets/images/PFilter.png",
+                          child: Image.asset(
+                            "assets/images/PFilter.png",
+                          ),
                         ),
                       ),
                     ],
@@ -406,4 +411,106 @@ class _HomePageScreenState extends State<HomePageScreen> {
       ),
     );
   }
+}
+
+dialogBox() {
+  var context;
+
+  showModalBottomSheet(
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topRight: Radius.circular(50),
+        topLeft: Radius.circular(50),
+      ),
+    ),
+    context: context,
+    builder: (BuildContext context) {
+      return Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Clear",
+                style: TextStyle(
+                  fontFamily: "Gordita",
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xFF230A06),
+                ),
+              ),
+              const Text(
+                "Filters",
+                style: TextStyle(
+                  fontFamily: "Gordita",
+                  fontSize: 19,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF230A06),
+                ),
+              ),
+              Container(
+                height: 30,
+                width: 30,
+                decoration: const BoxDecoration(
+                  color: Color(0xFF1C1A19),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ],
+          ),
+          const Divider(
+            color: Colors.black,
+            thickness: 2,
+            height: 2,
+          ),
+        ],
+      );
+    },
+    // builder: (BuildContext context) {
+    //   return StatefulBuilder(
+    //     builder: (context, setState) => SizedBox(
+    //       height: 900,
+    //       child: Column(
+    //         children: [
+    //           Row(
+    //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //             children: [
+    //               const Text(
+    //                 "Clear",
+    //                 style: TextStyle(
+    //                   fontFamily: "Gordita",
+    //                   fontSize: 14,
+    //                   fontWeight: FontWeight.w400,
+    //                   color: Color(0xFF230A06),
+    //                 ),
+    //               ),
+    //               const Text(
+    //                 "Filters",
+    //                 style: TextStyle(
+    //                   fontFamily: "Gordita",
+    //                   fontSize: 19,
+    //                   fontWeight: FontWeight.w600,
+    //                   color: Color(0xFF230A06),
+    //                 ),
+    //               ),
+    //               Container(
+    //                 height: 30,
+    //                 width: 30,
+    //                 decoration: const BoxDecoration(
+    //                   color: Color(0xFF1C1A19),
+    //                   shape: BoxShape.circle,
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //           const Divider(color: Colors.black,
+    //           thickness: 2,
+    //             height: 2,
+    //           )
+    //         ],
+    //       ),
+    //     ),
+    //   );
+    // },
+  );
 }

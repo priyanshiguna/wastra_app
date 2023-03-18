@@ -32,8 +32,8 @@ class _ForgotFirstScreenState extends State<ForgotFirstScreen> {
           child: Wrap(
             alignment: WrapAlignment.center,
             runAlignment: WrapAlignment.center,
-            children: [
-              const AppButton(
+            children: const [
+              AppButton(
                 title: "Verify",
               ),
             ],

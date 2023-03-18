@@ -4,10 +4,10 @@ class DailogueScreen extends StatefulWidget {
   const DailogueScreen({Key? key}) : super(key: key);
 
   @override
-  State<DailogueScreen> createState() => _DailogueScreenState();
+  State<DailogueScreen> createState() => _DailogeScreenState();
 }
 
-class _DailogueScreenState extends State<DailogueScreen> {
+class _DailogeScreenState extends State<DailogueScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

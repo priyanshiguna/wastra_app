@@ -65,7 +65,7 @@ class TextFillContainer extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: hintText,
                   border: InputBorder.none,
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                       color: Color(0x59000000),
                       fontWeight: FontWeight.w500,
                       fontSize: 12,
