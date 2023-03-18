@@ -126,17 +126,22 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         ),
                       ),
                       Spacer(),
-                      Container(
-                        height: 43,
-                        width: 47,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF67952),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
+                      GestureDetector(
+                        onTap: () {
+                          dialogBox();
+                        },
+                        child: Container(
+                          height: 43,
+                          width: 47,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF67952),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
                           ),
-                        ),
-                        child: Image.asset(
-                          "assets/images/PFilter.png",
+                          child: Image.asset(
+                            "assets/images/PFilter.png",
+                          ),
                         ),
                       ),
                     ],

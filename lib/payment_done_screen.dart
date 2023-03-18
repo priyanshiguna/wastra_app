@@ -41,7 +41,7 @@ class _PaymentDoneScreenState extends State<PaymentDoneScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               const Text(
                 "Congratulation!!!",
                 style: TextStyle(
@@ -63,7 +63,7 @@ class _PaymentDoneScreenState extends State<PaymentDoneScreen> {
               Container(
                 height: 55,
                 width: 256,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xffF67952),
                   borderRadius: BorderRadius.all(Radius.circular(40)),
                 ),
@@ -85,7 +85,7 @@ class _PaymentDoneScreenState extends State<PaymentDoneScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BottomBarScreen(),
+                      builder: (context) => const BottomBarScreen(),
                     ),
                   );
                 },

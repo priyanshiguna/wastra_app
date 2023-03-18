@@ -63,7 +63,7 @@ class _ProfilePaymentScreenState extends State<ProfilePaymentScreen> {
                           height: 28.32,
                           width: 34,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         const Text(
                           "PayPal",
                           style: TextStyle(
@@ -73,7 +73,7 @@ class _ProfilePaymentScreenState extends State<ProfilePaymentScreen> {
                             fontFamily: "Gordita",
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         const Text(
                           "Connected",
                           style: TextStyle(
@@ -111,7 +111,7 @@ class _ProfilePaymentScreenState extends State<ProfilePaymentScreen> {
                           height: 31,
                           width: 31,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         const Text(
                           "Google Pay",
                           style: TextStyle(
@@ -159,7 +159,7 @@ class _ProfilePaymentScreenState extends State<ProfilePaymentScreen> {
                           height: 23,
                           width: 36,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         const Text(
                           ".... ........ 4679",
                           style: TextStyle(
