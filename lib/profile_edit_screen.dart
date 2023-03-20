@@ -1,8 +1,5 @@
-import 'package:country_pickers/country.dart';
-import 'package:country_pickers/country_picker_dropdown.dart';
-import 'package:country_pickers/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:wastra_app/common_widget/appbar_container.dart';
 
 import 'app_common_widget/text_fill_common.dart';
@@ -83,6 +80,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                     Container(
                       height: 57,
                       width: double.infinity,
+                      padding: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: const Color(0xFFFBFBFD),
@@ -95,45 +93,35 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                           ),
                         ],
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Row(
-                          children: [
-                            CountryPickerDropdown(
-                              initialValue: 'AR',
-                              itemBuilder: _buildDropdownItem(),
-                              // itemFilter:  ['DE', "AR", 'GB', 'CN'].contains(c.isoCode),
-                              priorityList: [
-                                CountryPickerUtils.getCountryByIsoCode('GB'),
-                                CountryPickerUtils.getCountryByIsoCode('CN'),
-                              ],
-                              sortComparator: (Country a, Country b) =>
-                                  a.isoCode.compareTo(b.isoCode),
-                              onValuePicked: (Country country) {
-                                print("${country.name}");
-                              },
-                            ),
-                            const SizedBox(width: 10),
-                            const Icon(Icons.keyboard_arrow_down),
-                            const SizedBox(width: 10),
-                            TextFormField(
-                              cursorHeight: 20,
-                              controller: numbercontroller,
-                              style: const TextStyle(
-                                  color: Color(0x59000000),
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  fontFamily: "Gordita"),
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly,
-                                LengthLimitingTextInputFormatter(6),
-                              ],
-                              decoration: const InputDecoration(
-                                  border: InputBorder.none),
-                            ),
-                          ],
+                      child: IntlPhoneField(
+                        dropdownIconPosition: IconPosition.leading,
+                        dropdownIcon: const Icon(
+                          Icons.keyboard_arrow_down,
+                          color: Color(0x80000000),
                         ),
+                        textAlignVertical: TextAlignVertical.center,
+                        style: const TextStyle(
+                          color: Color(0xFF000000),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          fontFamily: "Gordita",
+                        ),
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.zero,
+                          counter: SizedBox(height: 0),
+                          hintText: "Number",
+                          hintStyle: TextStyle(
+                            color: Color(0x59000000),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            fontFamily: "Gordita",
+                          ),
+                          border: InputBorder.none,
+                        ),
+                        initialCountryCode: 'IN',
+                        onChanged: (phone) {
+                          print(phone.completeNumber);
+                        },
                       ),
                     ),
                     const SizedBox(height: 15),
@@ -155,13 +143,16 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: DropdownButtonFormField(
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color(0xFF000000),
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
                             fontFamily: "Gordita",
                           ),
-                          icon: const Icon(Icons.keyboard_arrow_down_sharp),
+                          icon: const Icon(
+                            Icons.keyboard_arrow_down_sharp,
+                            color: Color(0x80000000),
+                          ),
                           onChanged: (v) {},
                           decoration: const InputDecoration(
                             border: InputBorder.none,
@@ -178,19 +169,37 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                               value: "MALE",
                               child: Text(
                                 "Male",
+                                style: TextStyle(
+                                  color: Color(0xFF000000),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  fontFamily: "Gordita",
+                                ),
                               ),
                             ),
                             DropdownMenuItem(
+                              value: "FEMALE",
                               child: Text(
                                 "Female",
+                                style: TextStyle(
+                                  color: Color(0xFF000000),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  fontFamily: "Gordita",
+                                ),
                               ),
-                              value: "FEMALE",
                             ),
                             DropdownMenuItem(
+                              value: "Other",
                               child: Text(
                                 "Other",
+                                style: TextStyle(
+                                  color: Color(0xFF000000),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  fontFamily: "Gordita",
+                                ),
                               ),
-                              value: "Other",
                             ),
                           ],
                         ),
@@ -205,18 +214,4 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
       ),
     );
   }
-}
-
-_buildDropdownItem() {
-  buildDropdownItem(Country country) => Container(
-        child: Row(
-          children: <Widget>[
-            CountryPickerUtils.getDefaultFlagImage(country),
-            SizedBox(
-              width: 8.0,
-            ),
-            Text("+${country.phoneCode}(${country.isoCode})"),
-          ],
-        ),
-      );
 }

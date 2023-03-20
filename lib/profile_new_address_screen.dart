@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:wastra_app/profile_screen.dart';
 
 import 'app_common_widget/text_fill_common.dart';
@@ -38,8 +39,8 @@ class _ProfileAddNewAddressScreenState
           child: Wrap(
             runAlignment: WrapAlignment.center,
             alignment: WrapAlignment.center,
-            children: [
-              const AppButton(
+            children:const [
+               AppButton(
                 title: "Add",
               ),
             ],
@@ -171,7 +172,7 @@ class _ProfileAddNewAddressScreenState
                           ),
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -204,7 +205,7 @@ class _ProfileAddNewAddressScreenState
                             child: TextFormField(
                               cursorHeight: 20,
                               controller: Pincodecontroller,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color(0x59000000),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12,
@@ -215,7 +216,7 @@ class _ProfileAddNewAddressScreenState
                                 LengthLimitingTextInputFormatter(6),
                               ],
                               decoration:
-                                  InputDecoration(border: InputBorder.none),
+                                  const InputDecoration(border: InputBorder.none),
                             ),
                           ),
                         ],
