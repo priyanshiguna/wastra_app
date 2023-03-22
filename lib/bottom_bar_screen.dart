@@ -22,48 +22,114 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     const ProfilePageScreen(),
   ];
 
+  List imageList = [
+    {
+      "id": 0,
+      "image": "assets/images/hhome.png",
+      "select_image": "assets/images/hhometwo.png",
+    },
+    {
+      "id": 1,
+      "image": "assets/images/hbuy.png",
+      "select_image": "assets/images/hbuytwo.png",
+    },
+    {
+      "id": 2,
+      "image": "assets/images/hheart.png",
+      "select_image": "assets/images/hhearttwo.png",
+    },
+    {
+      "id": 3,
+      "image": "assets/images/hprofile.png",
+      "select_image": "assets/images/hprofiletwo.png",
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: screenList[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedItemColor: const Color(0xFFF67952),
-        currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/hhome.png"),
-              ),
-              label: 'home',
-              backgroundColor: Colors.blue),
-          BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/hbuy.png"),
-              ),
-              label: 'camera',
-              backgroundColor: Colors.blue),
-          BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/hheart.png"),
-              ),
-              label: 'search',
-              backgroundColor: Colors.blue),
-          BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/hprofile.png"),
-              ),
-              label: 'home',
-              backgroundColor: Colors.blue),
-        ],
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   showSelectedLabels: false,
+      //   showUnselectedLabels: false,
+      //   selectedItemColor: const Color(0xFFF67952),
+      //   currentIndex: currentIndex,
+      //   type: BottomNavigationBarType.fixed,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         icon: ImageIcon(
+      //           AssetImage(
+      //             imageindex
+      //                 ? "assets/images/hbuytwo.png"
+      //                 : "assets/images/hhome.png",
+      //           ),
+      //         ),
+      //         label: 'home',
+      //         backgroundColor: Colors.blue),
+      //     BottomNavigationBarItem(
+      //         icon: ImageIcon(
+      //           AssetImage("assets/images/hbuy.png"),
+      //         ),
+      //         label: 'camera',
+      //         backgroundColor: Colors.blue),
+      //     BottomNavigationBarItem(
+      //         icon: ImageIcon(
+      //           AssetImage("assets/images/hheart.png"),
+      //         ),
+      //         label: 'search',
+      //         backgroundColor: Colors.blue),
+      //     BottomNavigationBarItem(
+      //         icon: ImageIcon(
+      //           AssetImage("assets/images/hprofile.png"),
+      //         ),
+      //         label: 'home',
+      //         backgroundColor: Colors.blue),
+      //   ],
+      //   onTap: (index) {
+      //     setState(() {
+      //       currentIndex = index;
+      //     });
+      //   },
+      // ),
+      bottomSheet: Container(
+          height: 61,
+          color: Colors.white,
+          width: double.infinity,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: imageList
+                  .map(
+                    (value) => GestureDetector(
+                      onTap: () {
+                        currentIndex = value['id'];
+                        setState(() {});
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          currentIndex == value['id']
+                              ? Image.asset(
+                                  "assets/images/hEllipse.png",
+                                  width: 13,
+                                  fit: BoxFit.cover,
+                                )
+                              : const SizedBox(),
+                          Image(
+                            image: AssetImage(
+                              currentIndex == value['id']
+                                  ? value['select_image']
+                                  : value['image'],
+                            ),
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.cover,
+                          ),
+                          SizedBox(height: 8),
+                        ],
+                      ),
+                    ),
+                  )
+                  .toList())),
     );
   }
 }

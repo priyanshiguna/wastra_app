@@ -109,7 +109,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     const SizedBox(width: 30),
                     RichText(
                       text: const TextSpan(
-                        text: 'Home',
+                        text: 'Home\n',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: "Gorditas",
@@ -118,7 +118,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                            text: '\n(342)  4522019',
+                            text: '(342)  4522019',
                             style: TextStyle(
                               fontSize: 12,
                               fontFamily: "Gorditas",
@@ -164,18 +164,28 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   children: [
-                    Container(
-                      width: 28,
-                      height: 28,
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Colors.black12)),
+                    Transform.scale(
+                      scale: 1.5,
+                      child: Checkbox(
+                        shape: CircleBorder(),
+                        fillColor: MaterialStateProperty.all(
+                          Color(0xFFF67952),
+                        ),
+                        side: BorderSide(
+                          color: Colors.grey,
+                        ),
+                        value: agree,
+                        onChanged: (value) {
+                          setState(() {
+                            agree = value ?? false;
+                          });
+                        },
+                      ),
                     ),
                     const SizedBox(width: 30),
                     RichText(
                       text: const TextSpan(
-                        text: 'Office',
+                        text: 'Office\n',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: "Gorditas",
@@ -184,7 +194,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                            text: '\n(342)  4522019',
+                            text: '(342)  4522019',
                             style: TextStyle(
                               fontSize: 12,
                               fontFamily: "Gorditas",
@@ -325,6 +335,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 ),
               ),
             ),
+            const SizedBox(height: 30),
             Container(
               height: 90,
               child: ListView.separated(
