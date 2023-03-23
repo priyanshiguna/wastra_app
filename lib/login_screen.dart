@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wastra_app/home_profile_screen.dart';
 import 'package:wastra_app/signup_screen.dart';
 
 import 'app_common_widget/text_fill_common.dart';
-import 'bottom_bar_screen.dart';
 import 'common/app_button.dart';
 import 'forgot_first_screen.dart';
 
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => BottomBarScreen(),
+                          builder: (context) => HomeProfilePageScreen(),
                         ),
                       );
                     },

@@ -168,7 +168,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const Spacer(),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(

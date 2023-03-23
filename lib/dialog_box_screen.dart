@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import 'bottom_bar_screen.dart';
+import 'package:wastra_app/home_profile_screen.dart';
 
 class DialoagBoxScreen extends StatefulWidget {
   const DialoagBoxScreen({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
       () => Navigator.pushReplacement(
         context as BuildContext,
         MaterialPageRoute(
-          builder: (context) => const BottomBarScreen(),
+          builder: (context) => const HomeProfilePageScreen(),
         ),
       ),
     );

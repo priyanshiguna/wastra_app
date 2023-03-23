@@ -1,6 +1,8 @@
 import 'package:another_xlider/another_xlider.dart';
 import 'package:flutter/material.dart';
 
+import 'common/app_button.dart';
+
 class FilterScreen extends StatefulWidget {
   const FilterScreen({Key? key}) : super(key: key);
 
@@ -11,9 +13,8 @@ class FilterScreen extends StatefulWidget {
 class _FilterScreenState extends State<FilterScreen> {
   double minValue = 0;
   double maxValue = 0;
-  // RangeValues _priceRangeValues = RangeValues(0, 100);
-  // int minPrice = 0;
-  // int maxPrice = 0;
+  double minDistance = 0;
+  double maxDistance = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -65,15 +66,18 @@ class _FilterScreenState extends State<FilterScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Category",
-                    style: TextStyle(
-                        fontFamily: "Gordita",
-                        color: Color(0xFF230A06),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600),
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Category",
+                      style: TextStyle(
+                          fontFamily: "Gordita",
+                          color: Color(0xFF230A06),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
                   const SizedBox(height: 10),
                   Row(
@@ -160,17 +164,34 @@ class _FilterScreenState extends State<FilterScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
                   FlutterSlider(
                     values: [minValue, maxValue],
                     rangeSlider: true,
-                    max: 500,
+                    max: 300,
                     min: 0,
                     handler: FlutterSliderHandler(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF67952),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2,
+                        ),
+                      ),
+                      child: SizedBox(),
+                    ),
+                    handlerHeight: 25,
+                    rightHandler: FlutterSliderHandler(
+                      decoration: BoxDecoration(
                         color: Color(0xFFF67952),
                         shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2,
+                        ),
                       ),
+                      child: SizedBox(),
                     ),
                     trackBar: const FlutterSliderTrackBar(
                       activeTrackBar: BoxDecoration(
@@ -178,12 +199,23 @@ class _FilterScreenState extends State<FilterScreen> {
                       ),
                     ),
                     tooltip: FlutterSliderTooltip(
-                        boxStyle: const FlutterSliderTooltipBox(
-                      decoration: BoxDecoration(
-                        color: Color(0xFFFBFBFD),
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      leftPrefix: Text("\$ "),
+                      rightPrefix: Text("\$ "),
+                      textStyle: TextStyle(color: Colors.black),
+                      boxStyle: const FlutterSliderTooltipBox(
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFBFBFD),
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                                color: Color(0xADD7D9DB),
+                                spreadRadius: 0,
+                                blurRadius: 12,
+                                offset: Offset(0, 6))
+                          ],
+                        ),
                       ),
-                    )),
+                    ),
                     onDragging: (handlerIndex, lowerValue, upperValue) {
                       minValue = lowerValue;
                       maxValue = upperValue;
@@ -192,47 +224,96 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                   ),
-                  // RangeSlider(
-                  //   //by default, min-max: 0-1
-                  //   values: RangeValues(startval, endval),
-                  //   onChanged: (RangeValues value) {
-                  //     setState(() {
-                  //       startval = value.start;
-                  //       endval = value.end;
-                  //     });
-                  //   },
-                  // ),
-                  // RangeSlider(
-                  //   min: 0,
-                  //   max: 100,
-                  //   divisions: 10, //slide interval
-                  //   labels: RangeLabels("Rs. $startval1", "Rs. $endval1"),
-                  //   values: RangeValues(startval1, endval1),
-                  //   onChanged: (RangeValues value) {
-                  //     setState(() {
-                  //       startval1 = value.start;
-                  //       endval1 = value.end;
-                  //     });
-                  //   },
-                  // ),
-                  // RangeSlider(
-                  //   values: _priceRangeValues,
-                  //   min: _priceRangeValues.start,
-                  //   max: _priceRangeValues.end,
-                  //   divisions: 100,
-                  //   labels: RangeLabels(
-                  //     '${_priceRangeValues.start.round().toString()} k',
-                  //     '${_priceRangeValues.start.round().toString()} k',
-                  //   ),
-                  //   onChanged: (RangeValues values) {
-                  //     print(
-                  //         'price ${_priceRangeValues.start.round()}, ${_priceRangeValues.end.round()}');
-                  //     _priceRangeValues = values;
-                  //     minPrice = values.start.round();
-                  //     maxPrice = values.end.round();
-                  //     setState(() {});
-                  //   },
-                  // ),
+                  const SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        "Distance",
+                        style: TextStyle(
+                            fontFamily: "Gordita",
+                            color: Color(0xFF230A06),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "500m-2Km",
+                        style: TextStyle(
+                            fontFamily: "Gordita",
+                            color: Color(0xFF230A06),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+                  FlutterSlider(
+                    values: [minDistance, maxDistance],
+                    rangeSlider: true,
+                    max: 2000,
+                    min: 0,
+                    handler: FlutterSliderHandler(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF67952),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2,
+                        ),
+                      ),
+                      child: SizedBox(),
+                    ),
+                    handlerHeight: 25,
+                    rightHandler: FlutterSliderHandler(
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF67952),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2,
+                        ),
+                      ),
+                      child: SizedBox(),
+                    ),
+                    trackBar: const FlutterSliderTrackBar(
+                      activeTrackBar: BoxDecoration(
+                        color: Color(0xFFF67952),
+                      ),
+                    ),
+                    tooltip: FlutterSliderTooltip(
+                      custom: (value) => Text(value > 1000
+                          ? "${(value / 1000).toStringAsFixed(2)} km"
+                          : "${value.toStringAsFixed(0)}m"),
+                      boxStyle: const FlutterSliderTooltipBox(
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFBFBFD),
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                                color: Color(0xADD7D9DB),
+                                spreadRadius: 0,
+                                blurRadius: 12,
+                                offset: Offset(0, 6))
+                          ],
+                        ),
+                      ),
+                    ),
+                    onDragging: (handlerIndex, lowerValue, upperValue) {
+                      minDistance = lowerValue;
+                      maxDistance = upperValue;
+                      setState(() {});
+                    },
+                  ),
+                  const SizedBox(height: 120),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    runAlignment: WrapAlignment.center,
+                    children: const [
+                      AppButton(
+                        title: "Apply Filter",
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
