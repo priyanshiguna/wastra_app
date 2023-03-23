@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wastra_app/profile_screen.dart';
 
 import 'app_common_widget/text_fill_common.dart';
 import 'common/app_button.dart';
@@ -16,12 +15,12 @@ class ProfileAddNewAddressScreen extends StatefulWidget {
 
 class _ProfileAddNewAddressScreenState
     extends State<ProfileAddNewAddressScreen> {
-  TextEditingController Namecontroller = TextEditingController();
-  TextEditingController Addressonecontroller = TextEditingController();
-  TextEditingController Addresstwocontroller = TextEditingController();
-  TextEditingController Landmarkcontroller = TextEditingController();
-  TextEditingController Citycontroller = TextEditingController();
-  TextEditingController Pincodecontroller = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController addressOneController = TextEditingController();
+  TextEditingController addressTwoController = TextEditingController();
+  TextEditingController landmarkController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController pinCodeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +29,13 @@ class _ProfileAddNewAddressScreenState
         padding: const EdgeInsets.only(left: 15, bottom: 10),
         child: GestureDetector(
           onTap: () {
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ProfilePageScreen(),
-                ));
+            Navigator.pop(context);
           },
           child: Wrap(
             runAlignment: WrapAlignment.center,
             alignment: WrapAlignment.center,
-            children:const [
-               AppButton(
+            children: const [
+              AppButton(
                 title: "Add",
               ),
             ],
@@ -70,7 +65,7 @@ class _ProfileAddNewAddressScreenState
                   ),
                   const SizedBox(height: 10),
                   TextFillContainer(
-                    controller: Namecontroller,
+                    controller: nameController,
                   ),
                   const SizedBox(height: 20),
                   const Align(
@@ -87,7 +82,7 @@ class _ProfileAddNewAddressScreenState
                   ),
                   const SizedBox(height: 10),
                   TextFillContainer(
-                    controller: Addressonecontroller,
+                    controller: addressOneController,
                   ),
                   const SizedBox(height: 20),
                   const Align(
@@ -104,7 +99,7 @@ class _ProfileAddNewAddressScreenState
                   ),
                   const SizedBox(height: 10),
                   TextFillContainer(
-                    controller: Addresstwocontroller,
+                    controller: addressTwoController,
                   ),
                   const SizedBox(height: 20),
                   const Align(
@@ -121,7 +116,7 @@ class _ProfileAddNewAddressScreenState
                   ),
                   const SizedBox(height: 10),
                   TextFillContainer(
-                    controller: Landmarkcontroller,
+                    controller: landmarkController,
                   ),
                   const SizedBox(height: 20),
                   Row(
@@ -159,7 +154,7 @@ class _ProfileAddNewAddressScreenState
                               padding: const EdgeInsets.symmetric(vertical: 16),
                               child: TextFormField(
                                 cursorHeight: 20,
-                                controller: Citycontroller,
+                                controller: cityController,
                                 style: const TextStyle(
                                     color: Color(0x59000000),
                                     fontWeight: FontWeight.w500,
@@ -204,7 +199,7 @@ class _ProfileAddNewAddressScreenState
                             ),
                             child: TextFormField(
                               cursorHeight: 20,
-                              controller: Pincodecontroller,
+                              controller: pinCodeController,
                               style: const TextStyle(
                                   color: Color(0x59000000),
                                   fontWeight: FontWeight.w500,
@@ -215,8 +210,8 @@ class _ProfileAddNewAddressScreenState
                                 FilteringTextInputFormatter.digitsOnly,
                                 LengthLimitingTextInputFormatter(6),
                               ],
-                              decoration:
-                                  const InputDecoration(border: InputBorder.none),
+                              decoration: const InputDecoration(
+                                  border: InputBorder.none),
                             ),
                           ),
                         ],

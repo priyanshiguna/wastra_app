@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/notification_screen.dart';
+import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:wastra_app/filterscreen.dart';
 import 'package:wastra_app/search_screen.dart';
 
 import 'app_common_widget/app_home_screen_common.dart';
+import 'notification_screen.dart';
 
-class HomePageScreen extends StatefulWidget {
-  const HomePageScreen({Key? key}) : super(key: key);
+class HomePageScreen extends StatelessWidget {
+  final AdvancedDrawerController? advancedDrawerController;
 
-  @override
-  State<HomePageScreen> createState() => _HomePageScreenState();
-}
+  const HomePageScreen({Key? key, this.advancedDrawerController})
+      : super(key: key);
 
-class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,10 +26,13 @@ class _HomePageScreenState extends State<HomePageScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    "assets/images/PDrawer.png",
-                    height: 15,
-                    width: 27,
+                  GestureDetector(
+                    onTap: _handleMenuButtonPressed,
+                    child: Image.asset(
+                      "assets/images/PDrawer.png",
+                      height: 15,
+                      width: 27,
+                    ),
                   ),
                   const SizedBox(width: 90),
                   const Icon(Icons.location_on_outlined),
@@ -46,7 +49,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => NotificationScreen(),
+                            builder: (context) => const NotificationScreen(),
                           ));
                     },
                     child: Image.asset(
@@ -94,7 +97,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0xFFFBFBFD),
+                  color: const Color(0xFFFBFBFD),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -105,7 +108,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SearchScreen(),
+                              builder: (context) => const SearchScreen(),
                             ),
                           );
                         },
@@ -115,7 +118,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           width: 15,
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       const Text(
                         "Search items...",
                         style: TextStyle(
@@ -125,18 +128,28 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           color: Colors.black,
                         ),
                       ),
-                      Spacer(),
-                      Container(
-                        height: 43,
-                        width: 47,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFFF67952),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
+                      const Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              useSafeArea: true,
+                              backgroundColor: Colors.transparent,
+                              builder: (context) => const FilterScreen());
+                        },
+                        child: Container(
+                          height: 43,
+                          width: 47,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF67952),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
                           ),
-                        ),
-                        child: Image.asset(
-                          "assets/images/PFilter.png",
+                          child: Image.asset(
+                            "assets/images/PFilter.png",
+                          ),
                         ),
                       ),
                     ],
@@ -184,7 +197,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white,
-                      border: Border.all(color: Color(0xD00000D)),
+                      border: Border.all(color: const Color(0x0d00000d)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -212,7 +225,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white,
-                      border: Border.all(color: Color(0xD00000D)),
+                      border: Border.all(color: const Color(0x0d00000d)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -240,7 +253,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.white,
-                      border: Border.all(color: Color(0xD00000D)),
+                      border: Border.all(color: const Color(0x0d00000d)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -292,7 +305,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Container(
@@ -401,9 +414,14 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 );
               },
             ),
+            SizedBox(height: 65),
           ],
         ),
       ),
     );
+  }
+
+  void _handleMenuButtonPressed() {
+    advancedDrawerController!.showDrawer();
   }
 }

@@ -13,9 +13,9 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   bool checkBoxData = true;
-  TextEditingController emailcontroller = TextEditingController();
-  TextEditingController passwordcontroller = TextEditingController();
-  TextEditingController namecontroller = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 const SizedBox(height: 30),
                 TextFillContainer(
-                  controller: namecontroller,
+                  controller: nameController,
                   hintText: "name",
                   isRequired: true,
                   image: "assets/images/name.png",
@@ -57,7 +57,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 const SizedBox(height: 10),
                 TextFillContainer(
-                  controller: emailcontroller,
+                  controller: emailController,
                   hintText: "Email",
                   isRequired: true,
                   image: "assets/images/email.png",
@@ -66,7 +66,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 const SizedBox(height: 10),
                 TextFillContainer(
-                  controller: passwordcontroller,
+                  controller: passwordController,
                   hintText: "Password",
                   isRequired: true,
                   image: "assets/images/lock.png",
@@ -81,6 +81,8 @@ class _SignupPageState extends State<SignupPage> {
                       scale: 0.7,
                       child: Checkbox(
                         value: checkBoxData,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(3)),
                         fillColor:
                             MaterialStateProperty.all(const Color(0xFFF67952)),
                         onChanged: (data) {

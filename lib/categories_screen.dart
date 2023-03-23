@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'common/app_button.dart';
 import 'mycart_screen.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -165,7 +166,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 40),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -174,30 +175,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                               builder: (context) => const MyCart(),
                             ));
                       },
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          height: 55,
-                          width: 256,
-                          decoration: const BoxDecoration(
-                            color: Color(0xffF67952),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(100),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Add to Cart",
-                              style: TextStyle(
-                                color: Color(0xffFBFBFD),
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Gorditas",
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      child: const Align(
+                          alignment: Alignment.center,
+                          child: AppButton(
+                            title: "Add to Cart",
+                          )),
                     ),
                   ],
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:wastra_app/profile_screen.dart';
 
 import 'favorite_screen.dart';
@@ -6,7 +7,11 @@ import 'home_screen.dart';
 import 'order_complete_screen.dart';
 
 class BottomBarScreen extends StatefulWidget {
-  const BottomBarScreen({Key? key}) : super(key: key);
+  final AdvancedDrawerController? advancedDrawerController;
+  const BottomBarScreen({
+    Key? key,
+    this.advancedDrawerController,
+  }) : super(key: key);
 
   @override
   State<BottomBarScreen> createState() => _BottomBarScreenState();
@@ -15,12 +20,7 @@ class BottomBarScreen extends StatefulWidget {
 class _BottomBarScreenState extends State<BottomBarScreen> {
   int currentIndex = 0;
 
-  List<Widget> screenList = [
-    const HomePageScreen(),
-    const OrderCompleteScreen(),
-    const FavoriteScreen(),
-    const ProfilePageScreen(),
-  ];
+  List<Widget> screenList = [];
 
   List imageList = [
     {
@@ -44,6 +44,18 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       "select_image": "assets/images/hprofiletwo.png",
     },
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    screenList = [
+      HomePageScreen(advancedDrawerController: widget.advancedDrawerController),
+      const OrderCompleteScreen(),
+      const FavoriteScreen(),
+      const ProfilePageScreen(),
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

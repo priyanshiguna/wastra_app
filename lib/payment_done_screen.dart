@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'bottom_bar_screen.dart';
+import 'home_profile_screen.dart';
 
 class PaymentDoneScreen extends StatefulWidget {
   const PaymentDoneScreen({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _PaymentDoneScreenState extends State<PaymentDoneScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BottomBarScreen(),
+                      builder: (context) => const HomeProfilePageScreen(),
                     ),
                   );
                 },
