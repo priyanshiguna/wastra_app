@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'app_common_widget/text_fill_common.dart';
-import 'bottom_bar_screen.dart';
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
+import 'dialog_box_screen.dart';
 
 class ForgotThirdScreen extends StatefulWidget {
   const ForgotThirdScreen({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _ForgotThirdScreenState extends State<ForgotThirdScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const BottomBarScreen(),
+                builder: (context) => const DialoagBoxScreen(),
               ),
             );
           },

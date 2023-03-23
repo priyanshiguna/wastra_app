@@ -9,6 +9,8 @@ class CategoriesScreen extends StatefulWidget {
   State<CategoriesScreen> createState() => _CategoriesScreenState();
 }
 
+int checkBoxData = 0;
+
 class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             ),
             Container(
               width: double.infinity,
-              height: 350,
+              height: 396,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -108,64 +110,115 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ),
                     const SizedBox(height: 30),
-                    Row(
-                      children: [
-                        Container(
-                          height: 24,
-                          width: 24,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffBEE8EA),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Container(
-                          width: 28,
-                          height: 28,
-                          alignment: Alignment.center,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffF67952),
-                          ),
-                          child: Container(
-                            height: 23,
-                            width: 23,
-                            alignment: Alignment.center,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0xffffffff),
-                            ),
-                            child: Container(
-                              height: 20,
-                              width: 20,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xff141B4A),
+                    Container(
+                      height: 25,
+                      width: 150,
+                      child: ListView.builder(
+                        itemCount: 1,
+                        scrollDirection: Axis.horizontal,
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              checkBoxData = index;
+                            });
+                          },
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 28,
+                                height: 28,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: checkBoxData == index
+                                          ? Color(0xffF67952)
+                                          : Colors.white,
+                                    ),
+                                    color: Colors.transparent),
+                                child: Container(
+                                  height: checkBoxData == index ? 20 : 28,
+                                  width: checkBoxData == index ? 20 : 28,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xffBEE8EA),
+                                  ),
+                                ),
                               ),
-                            ),
+                              const SizedBox(width: 10),
+                              Container(
+                                width: 28,
+                                height: 28,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: checkBoxData == index
+                                          ? Color(0xffF67952)
+                                          : Colors.white,
+                                    ),
+                                    color: Colors.white),
+                                child: Container(
+                                  height: checkBoxData == index ? 20 : 28,
+                                  width: checkBoxData == index ? 20 : 28,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xff141B4A),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              Container(
+                                width: 28,
+                                height: 28,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: checkBoxData == index
+                                          ? Color(0xffF67952)
+                                          : Colors.white,
+                                    ),
+                                    color: Colors.white),
+                                child: Container(
+                                  height: checkBoxData == index ? 20 : 28,
+                                  width: checkBoxData == index ? 20 : 28,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xffCEE3F5),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              Container(
+                                width: 28,
+                                height: 28,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: checkBoxData == index
+                                          ? Color(0xffF67952)
+                                          : Colors.white,
+                                    ),
+                                    color: Colors.transparent),
+                                child: Container(
+                                  height: checkBoxData == index ? 20 : 28,
+                                  width: checkBoxData == index ? 20 : 28,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xffF4E5C3),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(width: 10),
-                        Container(
-                          height: 24,
-                          width: 24,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffCEE3F5),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Container(
-                          height: 24,
-                          width: 24,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffF4E5C3),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(

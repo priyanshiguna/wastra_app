@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_common_widget/text_fill_common.dart';
+import 'bottom_bar_screen.dart';
 import 'common/app_button.dart';
 import 'login_screen.dart';
 
@@ -117,7 +118,16 @@ class _SignupPageState extends State<SignupPage> {
                   ],
                 ),
                 const SizedBox(height: 30),
-                const AppButton(title: "Sign Up"),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomBarScreen(),
+                        ),
+                      );
+                    },
+                    child: const AppButton(title: "Sign Up")),
                 const SizedBox(height: 30),
                 Row(
                   children: const [
