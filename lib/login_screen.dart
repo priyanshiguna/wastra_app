@@ -4,7 +4,7 @@ import 'package:wastra_app/signup_screen.dart';
 
 import 'app_common_widget/text_fill_common.dart';
 import 'common/app_button.dart';
-import 'forgot_first_screen.dart';
+import 'forgot_password_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

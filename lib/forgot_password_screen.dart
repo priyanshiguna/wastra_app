@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'app_common_widget/text_fill_common.dart';
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
-import 'forgot_second_screen.dart';
+import 'otp_verify_screen.dart';
 
 class ForgotFirstScreen extends StatefulWidget {
   const ForgotFirstScreen({Key? key}) : super(key: key);

@@ -35,7 +35,7 @@ class _MyCartState extends State<MyCart> {
                   const SizedBox(
                     width: 130,
                   ),
-                  Text(
+                  const Text(
                     "My Cart",
                     style: TextStyle(
                       color: Colors.black,
@@ -70,8 +70,8 @@ class _MyCartState extends State<MyCart> {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         "Henley Shirts",
                         style: TextStyle(
                           fontSize: 14.0,
@@ -80,8 +80,8 @@ class _MyCartState extends State<MyCart> {
                           fontFamily: "Gordita",
                         ),
                       ),
-                      const SizedBox(height: 8.0),
-                      const Text(
+                      SizedBox(height: 8.0),
+                      Text(
                         "\$250",
                         style: TextStyle(
                           fontSize: 16.0,
@@ -92,7 +92,7 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 100),
+                  const SizedBox(width: 100),
                   Container(
                     width: 26.0,
                     height: 22,
@@ -107,7 +107,7 @@ class _MyCartState extends State<MyCart> {
                       size: 15.0,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   const Text(
                     "1",
                     style: TextStyle(
@@ -117,7 +117,7 @@ class _MyCartState extends State<MyCart> {
                       fontFamily: "Gordita",
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Container(
                     width: 26.0,
                     height: 21.48,
@@ -126,8 +126,8 @@ class _MyCartState extends State<MyCart> {
                       color: const Color(0xFFF3CDC1),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                    child: const Padding(
+                      padding: EdgeInsets.only(bottom: 10),
                       child: Icon(
                         Icons.minimize_outlined,
                         color: Color(0xFFF67952),
@@ -158,8 +158,8 @@ class _MyCartState extends State<MyCart> {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         "Casual Shirts",
                         style: TextStyle(
                           fontSize: 14.0,
@@ -168,8 +168,8 @@ class _MyCartState extends State<MyCart> {
                           fontFamily: "Gordita",
                         ),
                       ),
-                      const SizedBox(height: 8.0),
-                      const Text(
+                      SizedBox(height: 8.0),
+                      Text(
                         "\$145",
                         style: TextStyle(
                           fontSize: 16.0,
@@ -180,7 +180,7 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 100),
+                  const SizedBox(width: 100),
                   Container(
                     width: 26.0,
                     height: 22,
@@ -195,7 +195,7 @@ class _MyCartState extends State<MyCart> {
                       size: 15.0,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   const Text(
                     "2",
                     style: TextStyle(
@@ -205,7 +205,7 @@ class _MyCartState extends State<MyCart> {
                       fontFamily: "Gordita",
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Container(
                     width: 26.0,
                     height: 21.48,
@@ -214,8 +214,8 @@ class _MyCartState extends State<MyCart> {
                       color: const Color(0xFFF3CDC1),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                    child: const Padding(
+                      padding: EdgeInsets.only(bottom: 10),
                       child: Icon(
                         Icons.minimize_outlined,
                         color: Color(0xFFF67952),
@@ -246,8 +246,8 @@ class _MyCartState extends State<MyCart> {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         "Casual Nolin",
                         style: TextStyle(
                           fontSize: 14.0,
@@ -256,8 +256,8 @@ class _MyCartState extends State<MyCart> {
                           fontFamily: "Gordita",
                         ),
                       ),
-                      const SizedBox(height: 8.0),
-                      const Text(
+                      SizedBox(height: 8.0),
+                      Text(
                         "\$225",
                         style: TextStyle(
                           fontSize: 16.0,
@@ -268,7 +268,7 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 100),
+                  const SizedBox(width: 100),
                   Container(
                     width: 26.0,
                     height: 22,
@@ -283,7 +283,7 @@ class _MyCartState extends State<MyCart> {
                       size: 15.0,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   const Text(
                     "2",
                     style: TextStyle(
@@ -293,7 +293,7 @@ class _MyCartState extends State<MyCart> {
                       fontFamily: "Gordita",
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Container(
                     width: 26.0,
                     height: 21.48,
@@ -302,8 +302,8 @@ class _MyCartState extends State<MyCart> {
                       color: const Color(0xFFF3CDC1),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                    child: const Padding(
+                      padding: EdgeInsets.only(bottom: 10),
                       child: Icon(
                         Icons.minimize_outlined,
                         color: Color(0xFFF67952),
@@ -356,7 +356,7 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 100),
+                  const SizedBox(width: 100),
                   Container(
                     width: 26.0,
                     height: 22,
@@ -371,7 +371,7 @@ class _MyCartState extends State<MyCart> {
                       size: 15.0,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   const Text(
                     "2",
                     style: TextStyle(
@@ -381,7 +381,7 @@ class _MyCartState extends State<MyCart> {
                       fontFamily: "Gordita",
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Container(
                     width: 26.0,
                     height: 21.48,
@@ -390,8 +390,8 @@ class _MyCartState extends State<MyCart> {
                       color: const Color(0xFFF3CDC1),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                    child: const Padding(
+                      padding: EdgeInsets.only(bottom: 10),
                       child: Icon(
                         Icons.minimize_outlined,
                         color: Color(0xFFF67952),
@@ -401,7 +401,7 @@ class _MyCartState extends State<MyCart> {
                   ),
                 ],
               ),
-              const SizedBox(height: 120.0),
+              const SizedBox(height: 200.0),
               Row(
                 children: [
                   Container(
@@ -432,7 +432,7 @@ class _MyCartState extends State<MyCart> {
                   ),
                 ],
               ),
-              const SizedBox(height: 40.0),
+              const Spacer(),
               GestureDetector(
                 onTap: () {
                   Navigator.push(

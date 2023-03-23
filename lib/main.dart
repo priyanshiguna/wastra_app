@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wastra_app/onboarding_screen.dart';
+import 'package:wastra_app/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -274,7 +274,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   Row(
                     children: const [
                       Text(
-                        "Delivery Fee     : ",
+                        "Delivery Fee           : ",
                         style: TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.w600,
@@ -298,7 +298,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   Row(
                     children: const [
                       Text(
-                        "Subtotal               :",
+                        "Subtotal                  :",
                         style: TextStyle(
                           fontSize: 18.0,
                           fontWeight: FontWeight.w600,
@@ -364,7 +364,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 50),
             Container(
               height: 90,
               child: ListView.separated(
@@ -405,6 +405,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 ),
               ),
             ),
+            SizedBox(height: 70),
             GestureDetector(
               onTap: () {
                 Navigator.push(

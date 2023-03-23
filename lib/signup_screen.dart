@@ -50,7 +50,7 @@ class _SignupPageState extends State<SignupPage> {
                 const SizedBox(height: 30),
                 TextFillContainer(
                   controller: nameController,
-                  hintText: "name",
+                  hintText: "Name",
                   isRequired: true,
                   image: "assets/images/name.png",
                   text: "Name",

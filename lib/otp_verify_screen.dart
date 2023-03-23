@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'common/app_button.dart';
 import 'common_widget/appbar_container.dart';
-import 'forgot_third_screen.dart';
+import 'create_new_password_screen.dart';
 
 class ForgotSecondScreen extends StatefulWidget {
   const ForgotSecondScreen({Key? key}) : super(key: key);

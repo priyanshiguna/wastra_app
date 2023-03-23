@@ -61,7 +61,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             ),
             Container(
               width: double.infinity,
-              height: 350,
+              height: 395,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -185,6 +185,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                             title: "Add to Cart",
                           )),
                     ),
+                    SizedBox(height: 5),
                   ],
                 ),
               ),
