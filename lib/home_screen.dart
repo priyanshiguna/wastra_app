@@ -6,11 +6,31 @@ import 'package:wastra_app/search_screen.dart';
 import 'app_common_widget/app_home_screen_common.dart';
 import 'notification_screen.dart';
 
-class HomePageScreen extends StatelessWidget {
+class HomePageScreen extends StatefulWidget {
   final AdvancedDrawerController? advancedDrawerController;
 
-  const HomePageScreen({Key? key, this.advancedDrawerController})
-      : super(key: key);
+  HomePageScreen({Key? key, this.advancedDrawerController}) : super(key: key);
+
+  @override
+  State<HomePageScreen> createState() => _HomePageScreenState();
+}
+
+class _HomePageScreenState extends State<HomePageScreen> {
+  int checkBoxData = 0;
+
+  List<String> imageList = [
+    "assets/images/PyellowDress.png",
+    "assets/images/Ppinkshirt.png",
+    "assets/images/Pbottom.png",
+    "assets/images/PT-shirt.png",
+  ];
+
+  List<String> NameList = [
+    "Dress",
+    "Shirt",
+    "Pants",
+    "Tshirt",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -160,122 +180,86 @@ class HomePageScreen extends StatelessWidget {
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(right: 20, left: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 71,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
-                      border: Border.all(color: Colors.transparent),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Container(
+                height: 76,
+                child: ListView.separated(
+                  itemCount: imageList.length,
+                  scrollDirection: Axis.horizontal,
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(width: 27),
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      checkBoxData = index;
+                      setState(() {});
+                    },
+                    child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                        Image.asset(
-                          "assets/images/PyellowDress.png",
-                          height: 37,
-                          width: 27,
-                        ),
-                        const Text(
-                          "Dress",
-                          style: TextStyle(
-                            fontFamily: "Gordita",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey,
+                        Container(
+                          width: 71,
+                          height: 75,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade300),
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                imageList[index],
+                                height: 37,
+                                width: 27,
+                              ),
+                              Text(
+                                NameList[index],
+                                style: TextStyle(
+                                  fontFamily: "Gordita",
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
+                        checkBoxData == index
+                            ? Container(
+                                width: 71,
+                                height: 75,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.transparent),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Image.asset(
+                                      imageList[index],
+                                      height: 40,
+                                      width: 30,
+                                    ),
+                                    Text(
+                                      NameList[index],
+                                      style: TextStyle(
+                                        fontFamily: "Gordita",
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : SizedBox(),
                       ],
                     ),
                   ),
-                  Container(
-                    width: 71,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
-                      border: Border.all(color: const Color(0x0d00000d)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset(
-                          "assets/images/Ppinkshirt.png",
-                          height: 40,
-                          width: 30,
-                        ),
-                        const Text(
-                          "Shirt",
-                          style: TextStyle(
-                            fontFamily: "Gordita",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 71,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
-                      border: Border.all(color: const Color(0x0d00000d)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset(
-                          "assets/images/Pbottom.png",
-                          height: 37,
-                          width: 27,
-                        ),
-                        const Text(
-                          "Pants",
-                          style: TextStyle(
-                            fontFamily: "Gordita",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 71,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
-                      border: Border.all(color: const Color(0x0d00000d)),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset(
-                          "assets/images/PT-shirt.png",
-                          height: 37,
-                          width: 27,
-                        ),
-                        const Text(
-                          "Tshirt",
-                          style: TextStyle(
-                            fontFamily: "Gordita",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -422,6 +406,6 @@ class HomePageScreen extends StatelessWidget {
   }
 
   void _handleMenuButtonPressed() {
-    advancedDrawerController!.showDrawer();
+    widget.advancedDrawerController!.showDrawer();
   }
 }
