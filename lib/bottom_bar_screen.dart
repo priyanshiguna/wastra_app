@@ -105,8 +105,14 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       // ),
       bottomSheet: Container(
           height: 61,
-          color: Colors.white,
           width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: imageList

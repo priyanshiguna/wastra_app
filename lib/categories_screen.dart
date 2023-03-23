@@ -10,6 +10,8 @@ class CategoriesScreen extends StatefulWidget {
   State<CategoriesScreen> createState() => _CategoriesScreenState();
 }
 
+int checkBoxData = 0;
+
 class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
@@ -166,7 +168,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 20),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(

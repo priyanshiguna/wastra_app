@@ -12,6 +12,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   var currentIndex = 0;
   int checkBoxData = 0;
   bool agree = false;
+  bool checkbox = false;
   List<String> imageList = [
     "assets/images/hApplePay.png",
     "assets/images/hvisa-logo.png",
@@ -65,160 +66,188 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            Container(
-              height: 86,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Color(0x1C000000),
-                    spreadRadius: 0,
-                    blurRadius: 12.0,
-                    offset: Offset(0, 6),
-                  )
-                ],
-
-                color: Color(0xFFFBFBFD),
-                //color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
+            ListView.builder(
+              itemCount: 1,
+              scrollDirection: Axis.vertical,
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  setState(() {});
+                },
+                child: Column(
                   children: [
-                    Transform.scale(
-                      scale: 1.5,
-                      child: Checkbox(
-                        shape: CircleBorder(),
-                        fillColor: MaterialStateProperty.all(
-                          Color(0xFFF67952),
-                        ),
-                        side: BorderSide(
-                          color: Colors.grey,
-                        ),
-                        value: agree,
-                        onChanged: (value) {
-                          setState(() {
-                            agree = value ?? false;
-                          });
-                        },
-                      ),
-                    ),
-                    const SizedBox(width: 30),
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Home\n',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "Gorditas",
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: '(342)  4522019',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: "Gorditas",
-                              fontWeight: FontWeight.w600,
-                              color: Color(0x80000000),
-                            ),
-                          ),
-                          TextSpan(
-                            text: "\n\n220  New York",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: "Gorditas",
-                              fontWeight: FontWeight.w600,
-                              color: Color(0x80000000),
-                            ),
+                    Container(
+                      height: 86,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: agree! ? Color(0x1C000000) : Colors.white,
+                            spreadRadius: 0,
+                            blurRadius: 12.0,
+                            offset: Offset(0, 6),
                           ),
                         ],
+                        border: Border.all(
+                            color:
+                                agree! ? Colors.white : Colors.grey.shade700),
+                        color: Color(0xFFFBFBFD),
+                        //color: Colors.lightBlueAccent,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Row(
+                          children: [
+                            Transform.scale(
+                              scale: 1.5,
+                              child: Checkbox(
+                                shape: CircleBorder(),
+                                fillColor: MaterialStateProperty.all(
+                                  Color(0xFFF67952),
+                                ),
+                                side: BorderSide(
+                                  color: Colors.grey,
+                                ),
+                                value: agree,
+                                onChanged: (value) {
+                                  setState(() {
+                                    agree = value ?? false;
+                                  });
+                                },
+                              ),
+                            ),
+                            const SizedBox(width: 30),
+                            RichText(
+                              text: const TextSpan(
+                                text: 'Home\n',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: "Gorditas",
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: '(342)  4522019',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: "Gorditas",
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0x80000000),
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "\n\n220  New York",
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: "Gorditas",
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0x80000000),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Spacer(),
+                            const Image(
+                              image: AssetImage("assets/images/HEdit.png"),
+                              height: 28,
+                              width: 28,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    const Spacer(),
-                    const Image(
-                      image: AssetImage("assets/images/HEdit.png"),
-                      height: 28,
-                      width: 28,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              height: 86,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey.shade700),
-                color: const Color(0xFFFBFBFD),
-                //color: Colors.lightBlueAccent,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  children: [
-                    Transform.scale(
-                      scale: 1.5,
-                      child: Checkbox(
-                        shape: CircleBorder(),
-                        fillColor: MaterialStateProperty.all(
-                          Color(0xFFF67952),
-                        ),
-                        side: BorderSide(
-                          color: Colors.grey,
-                        ),
-                        value: agree,
-                        onChanged: (value) {
-                          setState(() {
-                            agree = value ?? false;
-                          });
-                        },
-                      ),
-                    ),
-                    const SizedBox(width: 30),
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Office\n',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "Gorditas",
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: '(342)  4522019',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: "Gorditas",
-                              fontWeight: FontWeight.w600,
-                              color: Color(0x80000000),
-                            ),
-                          ),
-                          TextSpan(
-                            text: "\n\n220  Montmartre,paris",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: "Gorditas",
-                              fontWeight: FontWeight.w600,
-                              color: Color(0x80000000),
-                            ),
+                    SizedBox(height: 20),
+                    Container(
+                      height: 86,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: checkbox! ? Color(0x1C000000) : Colors.white,
+                            spreadRadius: 0,
+                            blurRadius: 12.0,
+                            offset: Offset(0, 6),
                           ),
                         ],
+                        border: Border.all(
+                            color: checkbox!
+                                ? Colors.white
+                                : Colors.grey.shade700),
+                        color: const Color(0xFFFBFBFD),
+                        //color: Colors.lightBlueAccent,
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
                       ),
-                    ),
-                    const Spacer(),
-                    const Image(
-                      image: AssetImage("assets/images/HEdit.png"),
-                      height: 28,
-                      width: 28,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Row(
+                          children: [
+                            Transform.scale(
+                              scale: 1.5,
+                              child: Checkbox(
+                                shape: CircleBorder(),
+                                fillColor: MaterialStateProperty.all(
+                                  Color(0xFFF67952),
+                                ),
+                                side: BorderSide(
+                                  color: Colors.grey,
+                                ),
+                                value: checkbox,
+                                onChanged: (value) {
+                                  setState(() {
+                                    checkbox = value ?? false;
+                                  });
+                                },
+                              ),
+                            ),
+                            const SizedBox(width: 30),
+                            RichText(
+                              text: const TextSpan(
+                                text: 'Office\n',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: "Gorditas",
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: '(342)  4522019',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: "Gorditas",
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0x80000000),
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "\n\n220  Montmartre,paris",
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: "Gorditas",
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0x80000000),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Spacer(),
+                            const Image(
+                              image: AssetImage("assets/images/HEdit.png"),
+                              height: 28,
+                              width: 28,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
