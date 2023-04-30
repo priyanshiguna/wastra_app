@@ -9,7 +9,8 @@ import 'notification_screen.dart';
 class HomePageScreen extends StatefulWidget {
   final AdvancedDrawerController? advancedDrawerController;
 
-  HomePageScreen({Key? key, this.advancedDrawerController}) : super(key: key);
+  const HomePageScreen({Key? key, this.advancedDrawerController})
+      : super(key: key);
 
   @override
   State<HomePageScreen> createState() => _HomePageScreenState();
@@ -215,7 +216,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                               ),
                               Text(
                                 NameList[index],
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: "Gordita",
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -245,7 +246,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                     ),
                                     Text(
                                       NameList[index],
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontFamily: "Gordita",
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
@@ -255,7 +256,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                   ],
                                 ),
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                       ],
                     ),
                   ),
@@ -398,7 +399,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 );
               },
             ),
-            SizedBox(height: 65),
+            const SizedBox(height: 65),
           ],
         ),
       ),

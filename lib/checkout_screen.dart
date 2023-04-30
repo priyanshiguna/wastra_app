@@ -83,18 +83,19 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                            color: agree! ? Color(0x1C000000) : Colors.white,
+                            color:
+                                agree! ? const Color(0x1C000000) : Colors.white,
                             spreadRadius: 0,
                             blurRadius: 12.0,
-                            offset: Offset(0, 6),
+                            offset: const Offset(0, 6),
                           ),
                         ],
                         border: Border.all(
                             color:
                                 agree! ? Colors.white : Colors.grey.shade700),
-                        color: Color(0xFFFBFBFD),
+                        color: const Color(0xFFFBFBFD),
                         //color: Colors.lightBlueAccent,
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(15),
                         ),
                       ),
@@ -105,11 +106,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                             Transform.scale(
                               scale: 1.5,
                               child: Checkbox(
-                                shape: CircleBorder(),
+                                shape: const CircleBorder(),
                                 fillColor: MaterialStateProperty.all(
-                                  Color(0xFFF67952),
+                                  const Color(0xFFF67952),
                                 ),
-                                side: BorderSide(
+                                side: const BorderSide(
                                   color: Colors.grey,
                                 ),
                                 value: agree,
@@ -162,17 +163,19 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       height: 86,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                            color: checkbox! ? Color(0x1C000000) : Colors.white,
+                            color: checkbox!
+                                ? const Color(0x1C000000)
+                                : Colors.white,
                             spreadRadius: 0,
                             blurRadius: 12.0,
-                            offset: Offset(0, 6),
+                            offset: const Offset(0, 6),
                           ),
                         ],
                         border: Border.all(
@@ -192,11 +195,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                             Transform.scale(
                               scale: 1.5,
                               child: Checkbox(
-                                shape: CircleBorder(),
+                                shape: const CircleBorder(),
                                 fillColor: MaterialStateProperty.all(
-                                  Color(0xFFF67952),
+                                  const Color(0xFFF67952),
                                 ),
-                                side: BorderSide(
+                                side: const BorderSide(
                                   color: Colors.grey,
                                 ),
                                 value: checkbox,
@@ -405,7 +408,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 70),
+            const SizedBox(height: 70),
             GestureDetector(
               onTap: () {
                 Navigator.push(

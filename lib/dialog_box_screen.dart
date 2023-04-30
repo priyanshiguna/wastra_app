@@ -17,7 +17,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
     Timer(
       const Duration(seconds: 3),
       () => Navigator.pushReplacement(
-        context as BuildContext,
+        context,
         MaterialPageRoute(
           builder: (context) => const HomeProfilePageScreen(),
         ),
@@ -28,7 +28,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(21),
         ),
@@ -37,7 +37,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
       child: Container(
         height: 430,
         width: 300,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFFBFBFD),
           borderRadius: BorderRadius.all(
             Radius.circular(21),
@@ -45,7 +45,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
         ),
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Stack(
               alignment: Alignment.center,
               children: [
@@ -53,8 +53,8 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
                 Image.asset("assets/images/hlogo.png"),
               ],
             ),
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               "Congratulations!",
               style: TextStyle(
                   color: Color(0xFF000000),
@@ -62,8 +62,8 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
                   fontFamily: "Gordita",
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "Your account is ready to use. you will\nbe redirected to the Home page in a\n",
               style: TextStyle(
                   color: Color(0xFF000000),
@@ -71,7 +71,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
                   fontFamily: "Gordita",
                   fontWeight: FontWeight.w400),
             ),
-            Align(
+            const Align(
               alignment: Alignment.center,
               child: Text(
                 "few seconds.",
@@ -82,7 +82,7 @@ class _DialoagBoxScreenState extends State<DialoagBoxScreen> {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Image.asset("assets/images/hsearching.png"),
           ],
         ),

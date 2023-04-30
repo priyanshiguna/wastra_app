@@ -106,7 +106,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       bottomSheet: Container(
           height: 61,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30),
